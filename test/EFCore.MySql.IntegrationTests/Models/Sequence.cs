@@ -1,4 +1,4 @@
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models
 {
 
 	public class Sequence

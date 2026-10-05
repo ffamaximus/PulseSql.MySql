@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal
 {
     /// <summary>
     /// Represents a MySQL JSON operator traversing a JSON document with a path (i.e. x->y or x->>y)

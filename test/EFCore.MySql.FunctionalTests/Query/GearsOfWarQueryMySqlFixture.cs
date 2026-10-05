@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.TestModels.GearsOfWarModel;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     public class GearsOfWarQueryMySqlFixture : GearsOfWarQueryRelationalFixture, IQueryFixtureBase
     {

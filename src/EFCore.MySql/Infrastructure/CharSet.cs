@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Utilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Infrastructure
+namespace PulseSql.EntityFrameworkCore.MySql.Infrastructure
 {
     public class CharSet
     {

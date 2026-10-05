@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Design.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Design.Internal;
 
 // Used to generate a compiled model. The compiled model is only used at app runtime and not for design-time purposes.
 // Therefore, all annotations that are related to design-time concerns (i.e. databases, tables or columns) are superfluous and should be

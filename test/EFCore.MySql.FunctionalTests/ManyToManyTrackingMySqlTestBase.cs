@@ -10,10 +10,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.TestModels.ManyToManyModel;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
 {
     public abstract class ManyToManyTrackingMySqlTestBase<TFixture> : ManyToManyTrackingRelationalTestBase<TFixture>
         where TFixture : ManyToManyTrackingMySqlTestBase<TFixture>.ManyToManyTrackingMySqlFixtureBase

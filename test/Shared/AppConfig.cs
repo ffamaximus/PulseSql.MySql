@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Tests
+namespace PulseSql.EntityFrameworkCore.MySql.Tests
 {
     public static class AppConfig
     {

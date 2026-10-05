@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal
 {
     /// <summary>
     /// Allows to reference an alias from within the same SELECT statement, e.g. in a HAVING clause.

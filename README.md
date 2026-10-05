@@ -1,38 +1,38 @@
-# Pomelo.EntityFrameworkCore.MySql
+# PulseSql.EntityFrameworkCore.MySql
 
-[![Build status](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/actions/workflows/build.yml)
-[![Stable release feed for official builds](https://img.shields.io/nuget/v/Pomelo.EntityFrameworkCore.MySql.svg?style=flat-square&label=Stable)](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/) [![Prerelease feed for official builds](https://img.shields.io/nuget/vpre/Pomelo.EntityFrameworkCore.MySql.svg?style=flat-square&label=Prerelease)](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/)
-[![Nightly build feed for release builds](https://img.shields.io/myget/pomelo/vpre/Pomelo.EntityFrameworkCore.MySql.svg?label=Nightly)](https://www.myget.org/feed/pomelo/package/nuget/Pomelo.EntityFrameworkCore.MySql)
-[![Nightly build feed for debugging enabled builds](https://img.shields.io/myget/pomelo-debug/vpre/Pomelo.EntityFrameworkCore.MySql.svg?label=Debug)](https://www.myget.org/feed/pomelo-debug/package/nuget/Pomelo.EntityFrameworkCore.MySql)
+[![Build status](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/actions/workflows/build.yml)
+[![Stable release feed for official builds](https://img.shields.io/nuget/v/PulseSql.EntityFrameworkCore.MySql.svg?style=flat-square&label=Stable)](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/) [![Prerelease feed for official builds](https://img.shields.io/nuget/vpre/PulseSql.EntityFrameworkCore.MySql.svg?style=flat-square&label=Prerelease)](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/)
+[![Nightly build feed for release builds](https://img.shields.io/myget/pomelo/vpre/PulseSql.EntityFrameworkCore.MySql.svg?label=Nightly)](https://www.myget.org/feed/pomelo/package/nuget/PulseSql.EntityFrameworkCore.MySql)
+[![Nightly build feed for debugging enabled builds](https://img.shields.io/myget/pomelo-debug/vpre/PulseSql.EntityFrameworkCore.MySql.svg?label=Debug)](https://www.myget.org/feed/pomelo-debug/package/nuget/PulseSql.EntityFrameworkCore.MySql)
 
-`Pomelo.EntityFrameworkCore.MySql` is the most popular Entity Framework Core provider for MySQL compatible databases. It supports EF Core up to its latest version and uses [MySqlConnector](https://mysqlconnector.net/) for high-performance database server communication.
+`PulseSql.EntityFrameworkCore.MySql` is the most popular Entity Framework Core provider for MySQL compatible databases. It supports EF Core up to its latest version and uses [MySqlConnector](https://mysqlconnector.net/) for high-performance database server communication.
 
 ## Compatibility
 
 ### Dependencies
 
-The following versions of MySqlConnector, EF Core, .NET (Core), .NET Standard and .NET Framework are compatible with published releases of `Pomelo.EntityFrameworkCore.MySql`:
+The following versions of MySqlConnector, EF Core, .NET (Core), .NET Standard and .NET Framework are compatible with published releases of `PulseSql.EntityFrameworkCore.MySql`:
 
 Release | Branch                                                                                           | MySqlConnector     | EF Core | .NET (Core) | .NET Standard | .NET Framework
 --- |--------------------------------------------------------------------------------------------------|--------------------|:-------:|:-----------:| :---: | :---:
-[10.0.0](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/10.0.0) | [main](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/main)       | >= 2.4.0           | 10.0.x  |    10.0+    | - | -
-[9.0.0](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/9.0.0) | [9.0-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/9.0-maint)       | >= 2.4.0           |  9.0.x  |    8.0+     | - | -
-[8.0.3](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/8.0.3) | [8.0-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/8.0-maint) | >= 2.3.5           |  8.0.x  |    8.0+     | - | -
-[7.0.0](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/7.0.0) | [7.0-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/7.0-maint) | >= 2.2.5           |  7.0.x  |    6.0+     | - | -
-[6.0.3](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/6.0.3) | [6.0-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/6.0-maint) | >= 2.1.2           |  6.0.x  |    6.0+     | - | -
-[5.0.4](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/5.0.4) | [5.0-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/5.0-maint) | >= 1.3.13          |  5.0.x  |    3.0+     | 2.1 | -
-[3.2.7](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/3.2.7) | [3.2-maint](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/3.2-maint) | >= 0.69.10 < 1.0.0 |  3.1.x  |    2.0+     | 2.0 | 4.6.1+
+[10.0.0](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/10.0.0) | [main](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/main)       | >= 2.4.0           | 10.0.x  |    10.0+    | - | -
+[9.0.0](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/9.0.0) | [9.0-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/9.0-maint)       | >= 2.4.0           |  9.0.x  |    8.0+     | - | -
+[8.0.3](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/8.0.3) | [8.0-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/8.0-maint) | >= 2.3.5           |  8.0.x  |    8.0+     | - | -
+[7.0.0](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/7.0.0) | [7.0-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/7.0-maint) | >= 2.2.5           |  7.0.x  |    6.0+     | - | -
+[6.0.3](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/6.0.3) | [6.0-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/6.0-maint) | >= 2.1.2           |  6.0.x  |    6.0+     | - | -
+[5.0.4](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/5.0.4) | [5.0-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/5.0-maint) | >= 1.3.13          |  5.0.x  |    3.0+     | 2.1 | -
+[3.2.7](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/3.2.7) | [3.2-maint](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/3.2-maint) | >= 0.69.10 < 1.0.0 |  3.1.x  |    2.0+     | 2.0 | 4.6.1+
 
 ### Packages
 
-* [Pomelo.EntityFrameworkCore.MySql](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/)
-* [Pomelo.EntityFrameworkCore.MySql.Json.Microsoft](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.Json.Microsoft/)
-* [Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft/)
-* [Pomelo.EntityFrameworkCore.MySql.NetTopologySuite](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.NetTopologySuite/)
+* [PulseSql.EntityFrameworkCore.MySql](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/)
+* [PulseSql.EntityFrameworkCore.MySql.Json.Microsoft](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.Json.Microsoft/)
+* [PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft/)
+* [PulseSql.EntityFrameworkCore.MySql.NetTopologySuite](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.NetTopologySuite/)
 
 ### Supported Database Servers and Versions
 
-`Pomelo.EntityFrameworkCore.MySql` is tested against all actively maintained versions of `MySQL` and `MariaDB`. Older versions (e.g. MySQL 5.7) and other server implementations (e.g. Amazon Aurora) are usually compatible to a high degree as well, but are not tested as part of our CI. You can find a list of the versions, a release was tested against, within its [release](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/releases) notes.
+`PulseSql.EntityFrameworkCore.MySql` is tested against all actively maintained versions of `MySQL` and `MariaDB`. Older versions (e.g. MySQL 5.7) and other server implementations (e.g. Amazon Aurora) are usually compatible to a high degree as well, but are not tested as part of our CI. You can find a list of the versions, a release was tested against, within its [release](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/releases) notes.
 
 Currently tested versions are:
 
@@ -66,7 +66,7 @@ To use nightly builds from our Azure DevOps feed, add a `NuGet.config` file to y
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <packageSources>
-        <add key="pomelo-nightly" value="https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json" />
+        <add key="pomelo-nightly" value="https://pkgs.dev.azure.com/pomelo-efcore/PulseSql.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json" />
         <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
     </packageSources>
 </configuration>
@@ -76,12 +76,12 @@ To use nightly builds from our Azure DevOps feed, add a `NuGet.config` file to y
 
 Feeds that contain optimized (`Release` configuration) builds:
 
-* `https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json`
+* `https://pkgs.dev.azure.com/pomelo-efcore/PulseSql.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-public/nuget/v3/index.json`
 * `https://www.myget.org/F/pomelo/api/v3/index.json`
 
 Feeds that contain debugging enabled unoptimized (`Debug` configuration) builds:
 
-* `https://pkgs.dev.azure.com/pomelo-efcore/Pomelo.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-debug/nuget/v3/index.json`
+* `https://pkgs.dev.azure.com/pomelo-efcore/PulseSql.EntityFrameworkCore.MySql/_packaging/pomelo-efcore-debug/nuget/v3/index.json`
 * `https://www.myget.org/F/pomelo-debug/api/v3/index.json`
 
 The AZDO `nupkg` packages always contain `.pdb` files.
@@ -97,12 +97,12 @@ All `.pdb` files use Source Link.
 Ensure that your `.csproj` file contains the following reference:
 
 ```xml
-<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="10.0.0" />
+<PackageReference Include="PulseSql.EntityFrameworkCore.MySql" Version="10.0.0" />
 ```
 
 ### 2. Services Configuration
 
-Add `Pomelo.EntityFrameworkCore.MySql` to the services configuration in your `Startup.cs` file of your ASP.NET Core project:
+Add `PulseSql.EntityFrameworkCore.MySql` to the services configuration in your `Startup.cs` file of your ASP.NET Core project:
 
 ```c#
 public class Startup
@@ -132,11 +132,11 @@ public class Startup
 }
 ```
 
-View our [Configuration Options Wiki Page](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/wiki/Configuration-Options) for a list of common options.
+View our [Configuration Options Wiki Page](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/wiki/Configuration-Options) for a list of common options.
 
 ### 3. Sample Application
 
-Check out our [Integration Tests](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/tree/main/test/EFCore.MySql.IntegrationTests) for an example repository that includes an ASP.NET Core MVC Application.
+Check out our [Integration Tests](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/tree/main/test/EFCore.MySql.IntegrationTests) for an example repository that includes an ASP.NET Core MVC Application.
 
 There are also many complete and concise console application samples posted in the issue section (some of them can be found by searching for `Program.cs`).
 
@@ -149,7 +149,7 @@ Refer to Microsoft's [EF Core Documentation](https://docs.microsoft.com/en-us/ef
 Use the [EF Core tools](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) to execute scaffolding commands:
 
 ```
-dotnet ef dbcontext scaffold "Server=localhost;User=root;Password=1234;Database=ef" "Pomelo.EntityFrameworkCore.MySql"
+dotnet ef dbcontext scaffold "Server=localhost;User=root;Password=1234;Database=ef" "PulseSql.EntityFrameworkCore.MySql"
 ```
 
 ## Contribute
@@ -160,4 +160,4 @@ We are always looking for additional core contributors. If you got a couple of h
 
 ## License
 
-[MIT](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/blob/main/LICENSE)
+[MIT](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/blob/main/LICENSE)

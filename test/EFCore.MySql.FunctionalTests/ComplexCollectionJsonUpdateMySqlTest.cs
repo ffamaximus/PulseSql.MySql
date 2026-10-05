@@ -3,9 +3,9 @@
 
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.EntityFrameworkCore.Update;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests;
 
 public class ComplexCollectionJsonUpdateMySqlTest
     : ComplexCollectionJsonUpdateTestBase<ComplexCollectionJsonUpdateMySqlTest.MySqlFixture>

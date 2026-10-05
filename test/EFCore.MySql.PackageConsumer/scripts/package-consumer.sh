@@ -8,7 +8,7 @@ consumer_project="$repository_root/test/EFCore.MySql.PackageConsumer/EFCore.MySq
 consumer_project_directory="$(dirname -- "$consumer_project")"
 consumer_nuget_config="$repository_root/test/EFCore.MySql.PackageConsumer/NuGet.config"
 package_output="${PACKAGE_OUTPUT:-$repository_root/artifacts/packages}"
-provider_version="${POMELO_PACKAGE_VERSION:-10.0.0-rtm.3}"
+provider_version="${POMELO_PACKAGE_VERSION:-10.0.0-preview.1}"
 efcore_floor_version="${EFCORE_FLOOR_VERSION:-10.0.0}"
 efcore_latest_version="${EFCORE_LATEST_VERSION:-10.0.11}"
 mysql_image="${MYSQL_IMAGE:-mysql:8.4.3}"
@@ -48,14 +48,14 @@ if [[ "${PACKAGE_CONSUMER_SELF_TEST:-false}" == "true" ]]; then
         '{' \
         '  "libraries": {' \
         '    "Microsoft.EntityFrameworkCore/10.0.0": {},' \
-        '    "Pomelo.EntityFrameworkCore.MySql/10.0.0": {}' \
+        '    "PulseSql.EntityFrameworkCore.MySql/10.0.0": {}' \
         '  }' \
         '}' > "$self_test_assets_file"
 
     assert_assets_resolved "$self_test_assets_file" 'Microsoft.EntityFrameworkCore' '10.0.0' \
         || fail 'asset self-test did not find the expected EF Core package'
-    assert_assets_resolved "$self_test_assets_file" 'Pomelo.EntityFrameworkCore.MySql' '10.0.0' \
-        || fail 'asset self-test did not find the expected Pomelo package'
+    assert_assets_resolved "$self_test_assets_file" 'PulseSql.EntityFrameworkCore.MySql' '10.0.0' \
+        || fail 'asset self-test did not find the expected PulseSql package'
     if assert_assets_resolved "$self_test_assets_file" 'Missing.Package' '10.0.0'; then
         fail 'asset self-test unexpectedly found a missing package'
     fi
@@ -172,7 +172,7 @@ if [[ "${SKIP_PACKAGE:-false}" != "true" ]]; then
             -p:Version="$provider_version"
     done
 
-    provider_package="$package_output/Pomelo.EntityFrameworkCore.MySql.$provider_version.nupkg"
+    provider_package="$package_output/PulseSql.EntityFrameworkCore.MySql.$provider_version.nupkg"
     provider_nuspec="$(unzip -p "$provider_package" '*.nuspec')"
     if [[ "$provider_nuspec" != *'version="[10.0.0, 10.0.999]"'* ]]; then
         printf 'The provider package does not declare EF Core [10.0.0,10.0.999].\n' >&2
@@ -198,10 +198,10 @@ assert_restored_packages() {
         || fail "consumer restore did not resolve EF Core $efcore_version"
 
     for package in \
-        Pomelo.EntityFrameworkCore.MySql \
-        Pomelo.EntityFrameworkCore.MySql.Json.Microsoft \
-        Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft \
-        Pomelo.EntityFrameworkCore.MySql.NetTopologySuite; do
+        PulseSql.EntityFrameworkCore.MySql \
+        PulseSql.EntityFrameworkCore.MySql.Json.Microsoft \
+        PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft \
+        PulseSql.EntityFrameworkCore.MySql.NetTopologySuite; do
         assert_assets_resolved "$assets_file" "$package" "$provider_version" \
             || fail "consumer restore did not resolve $package $provider_version"
 
@@ -223,7 +223,7 @@ assert_restored_packages() {
             || fail "NuGet package provenance hash mismatch for $package"
     done
 
-    printf 'Local Pomelo package provenance verified for EF Core %s.\n' "$efcore_version"
+    printf 'Local PulseSql package provenance verified for EF Core %s.\n' "$efcore_version"
 }
 
 start_database() {

@@ -11,7 +11,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore.Storage;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     /// <summary>
     /// The type mapping used by EF Core 10 when a structural type (complex type or owned entity) is mapped to a JSON column

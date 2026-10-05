@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     public partial class NorthwindDbFunctionsQueryMySqlTest
     {

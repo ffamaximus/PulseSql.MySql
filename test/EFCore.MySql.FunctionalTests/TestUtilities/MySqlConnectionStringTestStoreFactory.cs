@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
 {
     public class MySqlConnectionStringTestStoreFactory : RelationalTestStoreFactory
     {

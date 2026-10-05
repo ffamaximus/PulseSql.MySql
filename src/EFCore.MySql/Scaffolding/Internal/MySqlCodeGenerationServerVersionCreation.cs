@@ -2,9 +2,9 @@
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
+using PulseSql.EntityFrameworkCore.MySql.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal
 {
     internal class MySqlCodeGenerationServerVersionCreation
     {

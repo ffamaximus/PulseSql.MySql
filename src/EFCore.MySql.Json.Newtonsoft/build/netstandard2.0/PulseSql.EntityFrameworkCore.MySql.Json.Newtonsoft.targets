@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-    <EFCoreMySqlNetTopologySuiteFile>$(IntermediateOutputPath)EFCoreMySqlNetTopologySuite$(DefaultLanguageSourceExtension)</EFCoreMySqlNetTopologySuiteFile>
+    <EFCoreMySqlJsonNewtonsoftFile>$(IntermediateOutputPath)EFCoreMySqlJsonNewtonsoft$(DefaultLanguageSourceExtension)</EFCoreMySqlJsonNewtonsoftFile>
   </PropertyGroup>
   <Choose>
     <When Condition="'$(Language)' == 'F#'">
@@ -24,21 +24,21 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
-  <Target Name="AddEFCoreMySqlNetTopologySuite"
+  <Target Name="AddEFCoreMySqlJsonNewtonsoft"
           BeforeTargets="CoreCompile"
           DependsOnTargets="PrepareForBuild"
           Condition="'$(DesignTimeBuild)' != 'True'"
           Inputs="$(MSBuildAllProjects)"
-          Outputs="$(EFCoreMySqlNetTopologySuiteFile)">
+          Outputs="$(EFCoreMySqlJsonNewtonsoftFile)">
     <ItemGroup>
-      <EFCoreMySqlNetTopologySuiteServices Include="Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute">
-        <_Parameter1>Pomelo.EntityFrameworkCore.MySql.Design.Internal.MySqlNetTopologySuiteDesignTimeServices, Pomelo.EntityFrameworkCore.MySql.NetTopologySuite</_Parameter1>
-        <_Parameter2>Pomelo.EntityFrameworkCore.MySql</_Parameter2>
-      </EFCoreMySqlNetTopologySuiteServices>
+      <EFCoreMySqlJsonNewtonsoftServices Include="Microsoft.EntityFrameworkCore.Design.DesignTimeServicesReferenceAttribute">
+        <_Parameter1>PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Design.Internal.MySqlJsonNewtonsoftDesignTimeServices, PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft</_Parameter1>
+        <_Parameter2>PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft</_Parameter2>
+      </EFCoreMySqlJsonNewtonsoftServices>
     </ItemGroup>
-    <WriteCodeFragment AssemblyAttributes="@(EFCoreMySqlNetTopologySuiteServices)"
+    <WriteCodeFragment AssemblyAttributes="@(EFCoreMySqlJsonNewtonsoftServices)"
                        Language="$(Language)"
-                       OutputFile="$(EFCoreMySqlNetTopologySuiteFile)">
+                       OutputFile="$(EFCoreMySqlJsonNewtonsoftFile)">
       <Output TaskParameter="OutputFile" ItemName="$(CodeFragmentItemGroup)" />
       <Output TaskParameter="OutputFile" ItemName="FileWrites" />
     </WriteCodeFragment>

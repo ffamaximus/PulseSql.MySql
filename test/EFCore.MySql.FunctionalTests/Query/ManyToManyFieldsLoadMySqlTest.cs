@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.TestModels.ManyToManyFieldsModel;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     public class ManyToManyFieldsLoadMySqlTest : ManyToManyFieldsLoadTestBase<
         ManyToManyFieldsLoadMySqlTest.ManyToManyFieldsLoadMySqlFixture>

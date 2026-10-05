@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests;
 
 public class ModelBuilding101MySqlTest : ModelBuilding101RelationalTestBase
 {

@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
 
 // TODO: 9.0
 // Remove MySqlQueryableMethodNormalizingExpressionVisitor, MySqlBipolarExpression and

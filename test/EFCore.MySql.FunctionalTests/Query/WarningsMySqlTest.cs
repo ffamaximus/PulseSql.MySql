@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     public class WarningsMySqlTest : WarningsTestBase<QueryNoClientEvalMySqlFixture>
     {

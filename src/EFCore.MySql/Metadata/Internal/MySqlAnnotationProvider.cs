@@ -9,10 +9,10 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Internal
 {
     public class MySqlAnnotationProvider : RelationalAnnotationProvider
     {

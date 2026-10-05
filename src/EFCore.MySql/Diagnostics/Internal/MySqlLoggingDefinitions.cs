@@ -3,7 +3,7 @@
 
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Diagnostics.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Diagnostics.Internal
 {
     public class MySqlLoggingDefinitions : RelationalLoggingDefinitions
     {

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Update;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Update.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Update.Internal;
 
 public class MySqlModificationCommand : ModificationCommand
 {

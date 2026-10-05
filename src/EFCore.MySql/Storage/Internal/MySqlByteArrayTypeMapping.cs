@@ -6,9 +6,9 @@ using System.Data;
 using System.Data.Common;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Json;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal.Json;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal.Json;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     /// <summary>
     ///     This API supports the Entity Framework Core infrastructure and is not intended to be used

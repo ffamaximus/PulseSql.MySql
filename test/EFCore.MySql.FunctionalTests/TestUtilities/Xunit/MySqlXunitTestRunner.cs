@@ -5,12 +5,12 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities.Xunit
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities.Xunit
 {
     public class MySqlXunitTestRunner : XunitTestRunner
     {

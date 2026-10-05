@@ -12,10 +12,10 @@ using MySqlConnector;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
 using NetTopologySuite.IO;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.ValueConversion.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.ValueConversion.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     /// <summary>
     ///     This is an internal API that supports the Entity Framework Core infrastructure and not subject to

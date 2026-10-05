@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySqlConnector;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal
 {
     public class MySqlJsonNewtonsoftTypeMapping<T> : MySqlJsonTypeMapping<T>
     {

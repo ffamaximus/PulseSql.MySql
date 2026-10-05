@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     public interface IMySqlEvaluatableExpressionFilter
     {

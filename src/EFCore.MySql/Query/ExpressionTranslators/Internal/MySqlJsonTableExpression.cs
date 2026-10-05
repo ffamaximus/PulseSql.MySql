@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
 
 /// <summary>
 ///     An expression that represents a MySQL JSON_TABLE() function call in a SQL tree.

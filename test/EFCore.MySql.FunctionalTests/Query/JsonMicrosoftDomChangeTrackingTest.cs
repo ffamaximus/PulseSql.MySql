@@ -6,15 +6,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Extensions.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Extensions.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     [SupportedServerVersionCondition(nameof(ServerVersionSupport.Json))]
     public class JsonMicrosoftDomChangeTrackingTest : IClassFixture<JsonMicrosoftDomChangeTrackingTest.JsonMicrosoftDomChangeTrackingFixture>

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Query.Translations;
 using Microsoft.EntityFrameworkCore.Types;
 using Microsoft.EntityFrameworkCore.Update;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
 {
     public class MySqlComplianceTest : RelationalComplianceTestBase
     {

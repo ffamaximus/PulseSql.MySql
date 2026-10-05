@@ -4,10 +4,10 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     public class MySqlNetTopologySuiteMethodCallTranslatorPlugin : IMethodCallTranslatorPlugin
     {

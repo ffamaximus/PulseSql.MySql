@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     public class MySqlEvaluatableExpressionFilter : RelationalEvaluatableExpressionFilter
     {

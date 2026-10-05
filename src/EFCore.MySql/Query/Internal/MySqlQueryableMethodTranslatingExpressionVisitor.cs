@@ -14,14 +14,14 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Utilities;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal;
 
 public class MySqlQueryableMethodTranslatingExpressionVisitor : RelationalQueryableMethodTranslatingExpressionVisitor
 {
-    private const string Issue1792SkipWithParameterFlagName = "Pomelo.EntityFrameworkCore.MySql.Issue1792.SkipWithParameter";
+    private const string Issue1792SkipWithParameterFlagName = "PulseSql.EntityFrameworkCore.MySql.Issue1792.SkipWithParameter";
 
     private static readonly bool _mySql8EngineCrashWhenUsingJsonTableWithPrimitiveCollectionInParametersSkip
         = AppContext.TryGetSwitch(Issue1792SkipWithParameterFlagName, out var enabled) && enabled;

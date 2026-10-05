@@ -4,7 +4,7 @@
 using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Internal
 {
     /// <summary>
     ///     This API supports the Entity Framework Core infrastructure and is not intended to be used

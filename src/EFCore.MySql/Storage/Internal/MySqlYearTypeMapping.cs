@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     public class MySqlYearTypeMapping : MySqlTypeMapping
     {

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests;
 
 public class ExistingConnectionMySqlTest
 {
@@ -133,7 +133,7 @@ public class ExistingConnectionMySqlTest
                         {
                             context.GetService<IRelationalConnection>();
                         }).Message,
-                    @"The connection string of a connection used by Pomelo.EntityFrameworkCore.MySql must contain ""AllowUserVariables=True;UseAffectedRows=False"".");
+                    @"The connection string of a connection used by PulseSql.EntityFrameworkCore.MySql must contain ""AllowUserVariables=True;UseAffectedRows=False"".");
             }
         }
     }
@@ -194,7 +194,7 @@ public class ExistingConnectionMySqlTest
                         {
                             context.GetService<IRelationalConnection>();
                         }).Message,
-                    @"The connection string of a connection used by Pomelo.EntityFrameworkCore.MySql must contain ""AllowUserVariables=True;UseAffectedRows=False"".");
+                    @"The connection string of a connection used by PulseSql.EntityFrameworkCore.MySql must contain ""AllowUserVariables=True;UseAffectedRows=False"".");
             }
         }
     }

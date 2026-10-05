@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 using NetTopologySuite.Geometries;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     public class MySqlLineStringMemberTranslator : IMemberTranslator
     {

@@ -3,12 +3,12 @@
 
 using System;
 using System.Linq;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Update;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Update.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Update.Internal;
 
 public class MySqlModificationCommandBatchFactory : IModificationCommandBatchFactory
 {

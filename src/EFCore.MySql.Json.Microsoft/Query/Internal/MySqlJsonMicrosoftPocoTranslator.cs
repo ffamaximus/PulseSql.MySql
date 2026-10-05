@@ -3,10 +3,10 @@ using System.Text.Json.Serialization;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Query.Internal
 {
     public class MySqlJsonMicrosoftPocoTranslator : MySqlJsonPocoTranslator
     {

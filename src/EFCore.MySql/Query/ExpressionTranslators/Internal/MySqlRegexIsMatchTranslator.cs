@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Pomelo.EntityFrameworkCore.MySql.Query.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal
 {
     public class MySqlRegexIsMatchTranslator : IMethodCallTranslator
     {

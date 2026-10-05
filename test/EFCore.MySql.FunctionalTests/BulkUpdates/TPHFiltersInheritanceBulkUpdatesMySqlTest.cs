@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.BulkUpdates;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
-using Pomelo.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.BulkUpdates;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.BulkUpdates;
 
 public class TPHFiltersInheritanceBulkUpdatesMySqlTest : FiltersInheritanceBulkUpdatesTestBase<
     TPHFiltersInheritanceBulkUpdatesMySqlFixture>

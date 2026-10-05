@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Utilities;
 using Microsoft.Extensions.DependencyInjection;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     /// <summary>
     ///     <para>

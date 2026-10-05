@@ -4,8 +4,8 @@
 using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Conventions;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Conventions;
+using PulseSql.EntityFrameworkCore.MySql.Storage;
 
 namespace Microsoft.EntityFrameworkCore.Metadata.Conventions
 {

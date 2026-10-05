@@ -5,10 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal
 {
     // TODO: 9.0
     // Remove from codebase.

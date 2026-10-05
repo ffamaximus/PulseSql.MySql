@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.TestModels.SpatialModel;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
 {
     public class SpatialMySqlTest : SpatialTestBase<SpatialMySqlFixture>
     {

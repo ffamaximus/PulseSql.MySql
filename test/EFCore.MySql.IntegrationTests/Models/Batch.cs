@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models
 {
     public class Product
     {

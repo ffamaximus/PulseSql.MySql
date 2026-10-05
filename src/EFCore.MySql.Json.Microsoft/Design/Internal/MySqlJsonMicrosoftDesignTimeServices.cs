@@ -3,12 +3,12 @@
 
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Scaffolding;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Scaffolding.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Scaffolding.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Design.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Design.Internal
 {
     /// <summary>
     ///     This is an internal API that supports the Entity Framework Core infrastructure and not subject to

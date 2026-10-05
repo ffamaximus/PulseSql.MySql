@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
 
 /// <summary>
 /// Looks for aggregate functions (like SUM(), AVG() etc.) in an expression tree, but not in subqueries.

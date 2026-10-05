@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>$(PomeloTestTargetFramework)</TargetFramework>
-    <AssemblyName>Pomelo.EntityFrameworkCore.MySql.FunctionalTests</AssemblyName>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql.FunctionalTests</RootNamespace>
+    <TargetFramework>$(PulseSqlTestTargetFramework)</TargetFramework>
+    <AssemblyName>PulseSql.EntityFrameworkCore.MySql.FunctionalTests</AssemblyName>
+    <RootNamespace>PulseSql.EntityFrameworkCore.MySql.FunctionalTests</RootNamespace>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <DefaultItemExcludes>$(DefaultItemExcludes);*.trx</DefaultItemExcludes>
   </PropertyGroup>

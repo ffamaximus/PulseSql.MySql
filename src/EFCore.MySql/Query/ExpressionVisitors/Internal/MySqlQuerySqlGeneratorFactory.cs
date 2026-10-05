@@ -4,9 +4,9 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal
 {
     public class MySqlQuerySqlGeneratorFactory : IQuerySqlGeneratorFactory
     {

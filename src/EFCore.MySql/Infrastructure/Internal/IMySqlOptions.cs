@@ -3,10 +3,10 @@
 
 using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal
 {
     public interface IMySqlOptions : ISingletonOptions
     {

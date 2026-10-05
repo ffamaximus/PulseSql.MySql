@@ -19,13 +19,13 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Utilities;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Extensions;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Extensions;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal
 {
     public class MySqlDatabaseModelFactory : DatabaseModelFactory
     {

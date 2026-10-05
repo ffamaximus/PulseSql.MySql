@@ -12,9 +12,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Utilities;
 using Microsoft.Extensions.DependencyInjection;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal
 {
     public abstract class MySqlJsonOptionsExtension
         : IDbContextOptionsExtension

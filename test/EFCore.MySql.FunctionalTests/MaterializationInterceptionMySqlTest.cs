@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests;
 
 public class MaterializationInterceptionMySqlTest(NonSharedFixture fixture)
     : MaterializationInterceptionTestBase<MaterializationInterceptionMySqlTest.MySqlLibraryContext>(fixture)

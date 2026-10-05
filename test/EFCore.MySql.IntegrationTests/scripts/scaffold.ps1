@@ -34,7 +34,7 @@ try
 
   $connectionString = (Get-Content config.json -Raw | ConvertFrom-Json).Data.ConnectionString
   $arguments = @(
-    "ef", "dbcontext", "scaffold", $connectionString, "Pomelo.EntityFrameworkCore.MySql",
+    "ef", "dbcontext", "scaffold", $connectionString, "PulseSql.EntityFrameworkCore.MySql",
     "--project", $projectFile,
     "--startup-project", $projectFile,
     "--context", "ScaffoldContext",

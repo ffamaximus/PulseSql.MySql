@@ -3,7 +3,7 @@
 
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
 
 public class MySqlQueryTranslationPreprocessorFactory : IQueryTranslationPreprocessorFactory
 {

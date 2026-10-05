@@ -5,9 +5,9 @@ using System;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal
 {
     internal class MySqlCodeGenerationServerVersionCreationTypeMapping : RelationalTypeMapping
     {

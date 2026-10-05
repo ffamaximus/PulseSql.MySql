@@ -7,9 +7,9 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Utilities;
-using Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     /// <inheritdoc />
     public class MySqlSqlNullabilityProcessor : SqlNullabilityProcessor

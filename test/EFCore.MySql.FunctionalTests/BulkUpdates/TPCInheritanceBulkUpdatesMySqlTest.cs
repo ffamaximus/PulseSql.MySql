@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.BulkUpdates;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.BulkUpdates;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.BulkUpdates;
 
 public class TPCInheritanceBulkUpdatesMySqlTest : TPCInheritanceBulkUpdatesTestBase<TPCInheritanceBulkUpdatesMySqlFixture>
 {

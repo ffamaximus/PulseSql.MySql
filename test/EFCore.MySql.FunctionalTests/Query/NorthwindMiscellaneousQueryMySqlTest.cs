@@ -8,15 +8,15 @@ using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.TestModels.Northwind;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
-using Pomelo.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
 using Xunit;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
 {
     public partial class NorthwindMiscellaneousQueryMySqlTest : NorthwindMiscellaneousQueryRelationalTestBase<
         NorthwindQueryMySqlFixture<NoopModelCustomizer>>
@@ -231,7 +231,7 @@ ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
         {
             Assert.Equal(
                 CoreStrings.ClientProjectionCapturingConstantInMethodInstance(
-                    "Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest",
+                    "PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest",
                     "InstanceMethod"),
                 (await Assert.ThrowsAsync<InvalidOperationException>(
                     () => base.Client_code_using_instance_method_throws(async))).Message);
@@ -243,7 +243,7 @@ ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
         {
             Assert.Equal(
                 CoreStrings.ClientProjectionCapturingConstantInMethodArgument(
-                    "Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest",
+                    "PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest",
                     "StaticMethod"),
                 (await Assert.ThrowsAsync<InvalidOperationException>(
                     () => base.Client_code_using_instance_in_static_method(async))).Message);
@@ -255,7 +255,7 @@ ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
         {
             Assert.Equal(
                 CoreStrings.ClientProjectionCapturingConstantInTree(
-                    "Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest"),
+                    "PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindMiscellaneousQueryMySqlTest"),
                 (await Assert.ThrowsAsync<InvalidOperationException>(
                     () => base.Client_code_using_instance_in_anonymous_type(async))).Message);
 
@@ -267,7 +267,7 @@ ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
             await AssertTranslationFailedWithDetails(
                 () => base.Client_code_unknown_method(async),
                 CoreStrings.QueryUnableToTranslateMethod(
-                    "Microsoft.EntityFrameworkCore.Query.NorthwindMiscellaneousQueryTestBase<Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindQueryMySqlFixture<Microsoft.EntityFrameworkCore.TestUtilities.NoopModelCustomizer>>",
+                    "Microsoft.EntityFrameworkCore.Query.NorthwindMiscellaneousQueryTestBase<PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query.NorthwindQueryMySqlFixture<Microsoft.EntityFrameworkCore.TestUtilities.NoopModelCustomizer>>",
                     nameof(UnknownMethod)));
 
             AssertSql();

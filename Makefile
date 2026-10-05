@@ -1,6 +1,6 @@
-# Pomelo.EntityFrameworkCore.MySql
+# PulseSql.EntityFrameworkCore.MySql
 
-SOLUTION        := Pomelo.EFCore.MySql.sln
+SOLUTION        := PulseSql.EFCore.MySql.sln
 CONFIGURATION   ?= Debug
 PACKAGE_OUTPUT  := artifacts/packages
 SRC_PROJECTS    := \
@@ -14,7 +14,7 @@ SRC_PROJECTS    := \
 .PHONY: help restore build rebuild test functional-tests efcore10-spec-audit efcore10-ci-check efcore10-ci-portability-check package package-consumer clean
 
 help: ## List the available tasks (default)
-	@echo "Pomelo.EntityFrameworkCore.MySql -- available make tasks:"
+	@echo "PulseSql.EntityFrameworkCore.MySql -- available make tasks:"
 	@echo ""
 	@grep -hE '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-16s\033[0m %s\n", $$1, $$2}'

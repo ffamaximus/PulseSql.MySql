@@ -9,9 +9,9 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal
 {
     /// <summary>
     ///     An expression that explicitly specifies the collation of a string value.

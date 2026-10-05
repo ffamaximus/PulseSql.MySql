@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
 {
     public class MySqlNetTopologySuiteApiConsistencyTest : ApiConsistencyTestBase<MySqlNetTopologySuiteApiConsistencyTest.MySqlNetTopologySuiteApiConsistencyFixture>
     {

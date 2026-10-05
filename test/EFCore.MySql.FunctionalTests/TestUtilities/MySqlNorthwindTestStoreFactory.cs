@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
 {
     public class MySqlNorthwindTestStoreFactory : MySqlTestStoreFactory
     {

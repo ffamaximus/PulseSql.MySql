@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Conventions
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Conventions
 {
     /// <summary>
     ///     A convention that configures store value generation as <see cref="ValueGenerated.OnAdd"/> on properties that are

@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Internal
 {
     public static class ObjectToEnumConverter
     {

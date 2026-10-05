@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Migrations.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Migrations.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
 {
     public class MySqlTestMigrator : MySqlMigrator
     {

@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Conventions;
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Conventions;
 
 /// <summary>
 ///     A convention that creates an optimized copy of the mutable model.

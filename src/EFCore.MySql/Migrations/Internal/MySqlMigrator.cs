@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Migrations.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Migrations.Internal
 {
     public class MySqlMigrator : Migrator
     {

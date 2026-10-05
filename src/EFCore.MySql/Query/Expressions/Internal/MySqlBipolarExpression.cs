@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Utilities;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Expressions.Internal;
 
 public class MySqlBipolarExpression : Expression
 {

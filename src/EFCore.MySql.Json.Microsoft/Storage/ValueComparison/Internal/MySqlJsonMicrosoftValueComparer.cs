@@ -8,11 +8,11 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueConversion.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.ValueComparison.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueConversion.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.ValueComparison.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueComparison.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueComparison.Internal
 {
     public static class MySqlJsonMicrosoftValueComparer
     {

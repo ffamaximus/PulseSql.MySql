@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal
 {
     public interface IMySqlJsonPocoTranslator : IMemberTranslator
     {

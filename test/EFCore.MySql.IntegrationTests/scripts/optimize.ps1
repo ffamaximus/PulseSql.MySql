@@ -40,9 +40,9 @@ try
     "ef", "dbcontext", "optimize",
     "--project", $projectFile,
     "--startup-project", $projectFile,
-    "--context", "Pomelo.EntityFrameworkCore.MySql.IntegrationTests.AppDb",
+    "--context", "PulseSql.EntityFrameworkCore.MySql.IntegrationTests.AppDb",
     "--output-dir", $targetDirectoryName,
-    "--namespace", "Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Optimize",
+    "--namespace", "PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Optimize",
     "--configuration", "Debug"
   )
   Invoke-Dotnet $arguments

@@ -37,9 +37,9 @@ target_directory_created=true
 dotnet ef dbcontext optimize \
   --project "$project_file" \
   --startup-project "$project_file" \
-  --context 'Pomelo.EntityFrameworkCore.MySql.IntegrationTests.AppDb' \
+  --context 'PulseSql.EntityFrameworkCore.MySql.IntegrationTests.AppDb' \
   --output-dir "$target_directory_name" \
-  --namespace 'Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Optimize' \
+  --namespace 'PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Optimize' \
   --configuration Debug
 
 for generated_file in \

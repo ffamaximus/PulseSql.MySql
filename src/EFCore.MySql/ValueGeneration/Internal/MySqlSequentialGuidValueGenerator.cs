@@ -3,12 +3,12 @@
 
 using System;
 using System.Security.Cryptography;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.ValueGeneration.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.ValueGeneration.Internal
 {
     public class MySqlSequentialGuidValueGenerator : ValueGenerator<Guid>
     {

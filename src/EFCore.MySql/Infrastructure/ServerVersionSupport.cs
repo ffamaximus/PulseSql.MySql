@@ -6,7 +6,7 @@ using System.Reflection;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Infrastructure
+namespace PulseSql.EntityFrameworkCore.MySql.Infrastructure
 {
     public class ServerVersionSupport
     {

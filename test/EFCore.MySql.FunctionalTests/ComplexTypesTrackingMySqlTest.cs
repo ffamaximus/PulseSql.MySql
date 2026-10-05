@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 using Xunit.Abstractions;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests;
 
 public class ComplexTypesTrackingMySqlTest : ComplexTypesTrackingRelationalTestBase<ComplexTypesTrackingMySqlTest.MySqlFixture>
 {

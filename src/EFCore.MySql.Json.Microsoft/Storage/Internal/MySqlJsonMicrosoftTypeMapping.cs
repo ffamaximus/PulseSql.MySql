@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal
 {
     public class MySqlJsonMicrosoftTypeMapping<T> : MySqlJsonTypeMapping<T>
     {

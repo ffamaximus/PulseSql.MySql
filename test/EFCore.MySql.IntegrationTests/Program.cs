@@ -1,12 +1,12 @@
 ﻿using System;
-using Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Commands;
+using PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Commands;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests
 {
     public class Program
     {

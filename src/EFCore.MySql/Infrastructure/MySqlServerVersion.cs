@@ -3,7 +3,7 @@
 
 using System;
 using JetBrains.Annotations;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.EntityFrameworkCore

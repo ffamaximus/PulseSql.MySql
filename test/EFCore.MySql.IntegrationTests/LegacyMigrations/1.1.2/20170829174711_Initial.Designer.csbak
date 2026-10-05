@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Pomelo.EntityFrameworkCore.MySql.IntegrationTests;
-using Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models;
+using PulseSql.EntityFrameworkCore.MySql.IntegrationTests;
+using PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Migrations
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Migrations
 {
     [DbContext(typeof(AppDb))]
     [Migration("20170829174711_Initial")]

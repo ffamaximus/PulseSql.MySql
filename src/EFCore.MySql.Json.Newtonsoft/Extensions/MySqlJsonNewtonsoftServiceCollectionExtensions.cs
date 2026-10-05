@@ -4,22 +4,22 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Query;
-using Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Query.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Query.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Utilities;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionTranslators.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
-    ///     Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft extension methods for <see cref="IServiceCollection" />.
+    ///     PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft extension methods for <see cref="IServiceCollection" />.
     /// </summary>
     public static class MySqlJsonNewtonsoftServiceCollectionExtensions
     {
         /// <summary>
-        ///     Adds the services required for JSON.NET support (Newtonsoft.Json) in Pomelo's MySQL provider for Entity Framework Core.
+        ///     Adds the services required for JSON.NET support (Newtonsoft.Json) in PulseSql's MySQL provider for Entity Framework Core.
         /// </summary>
         /// <param name="serviceCollection"> The <see cref="IServiceCollection" /> to add services to. </param>
         /// <returns> The same service collection so that multiple calls can be chained. </returns>

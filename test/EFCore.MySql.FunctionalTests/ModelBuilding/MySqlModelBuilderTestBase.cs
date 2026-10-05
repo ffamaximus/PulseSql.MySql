@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.ModelBuilding;
 using Microsoft.EntityFrameworkCore.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.ModelBuilding;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.ModelBuilding;
 
 public class MySqlModelBuilderTestBase : RelationalModelBuilderTest
 {

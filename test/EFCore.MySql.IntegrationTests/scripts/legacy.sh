@@ -32,7 +32,7 @@ dotnet_ef() {
   dotnet ef "$@" \
     --project "$project_file" \
     --startup-project "$project_file" \
-    --context 'Pomelo.EntityFrameworkCore.MySql.IntegrationTests.AppDb'
+    --context 'PulseSql.EntityFrameworkCore.MySql.IntegrationTests.AppDb'
 }
 
 dotnet_command() {

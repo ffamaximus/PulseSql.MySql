@@ -1,8 +1,10 @@
 ﻿## About
 
-_Pomelo.EntityFrameworkCore.MySql_ is the Entity Framework Core (EF Core) provider for [MySQL](https://www.mysql.com), [MariaDB](https://mariadb.org), [Amazon Aurora](https://aws.amazon.com/rds/aurora), [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql) and other MySQL-compatible databases.
+_PulseSql.EntityFrameworkCore.MySql_ is the Entity Framework Core (EF Core) provider for [MySQL](https://www.mysql.com), [MariaDB](https://mariadb.org), [Amazon Aurora](https://aws.amazon.com/rds/aurora), [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql) and other MySQL-compatible databases.
 
-It is build on top of [MySqlConnector](https://github.com/mysql-net/MySqlConnector).
+It is built on top of [MySqlConnector](https://github.com/mysql-net/MySqlConnector).
+
+> PulseSql is a maintained fork of [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql) that tracks current EF Core releases. Namespaces were renamed from `Pomelo.*` to `PulseSql.*`; database-level objects and model annotations remain compatible.
 
 ## How to Use
 
@@ -43,18 +45,18 @@ public class Startup
 ## Related Packages
 
 * JSON support
-  * [Pomelo.EntityFrameworkCore.MySql.Json.Microsoft](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.Json.Microsoft)
-  * [Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft)
+  * [PulseSql.EntityFrameworkCore.MySql.Json.Microsoft](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.Json.Microsoft)
+  * [PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft)
 * Spatial support
-  * [Pomelo.EntityFrameworkCore.MySql.NetTopologySuite](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql.NetTopologySuite)
+  * [PulseSql.EntityFrameworkCore.MySql.NetTopologySuite](https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql.NetTopologySuite)
 * Other Packages
   * [MySqlConnector](https://www.nuget.org/packages/MySqlConnector)
   * [Microsoft.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)
 
 ## License
 
-_Pomelo.EntityFrameworkCore.MySql_ is released as open source under the [MIT license](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql/blob/main/LICENSE).
+_PulseSql.EntityFrameworkCore.MySql_ is released as open source under the [MIT license](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql/blob/main/LICENSE).
 
 ## Feedback
 
-Bug reports and contributions are welcome at our [GitHub repository](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql).
+Bug reports and contributions are welcome at our [GitHub repository](https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql).

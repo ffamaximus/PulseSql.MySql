@@ -13,9 +13,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Storage;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     public class MySqlDatabaseCreator : RelationalDatabaseCreator
     {

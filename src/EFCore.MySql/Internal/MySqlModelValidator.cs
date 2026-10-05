@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Internal
 {
     /// <summary>
     ///     <para>

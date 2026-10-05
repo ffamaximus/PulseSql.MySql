@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Commands{
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Commands{
 
     public class CommandRunner : ICommandRunner
     {
@@ -51,7 +51,7 @@ namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Commands{
                         using (var scope = new AppDbScope())
                         {
                             var db = scope.AppDb;
-                            if (db.Model.GetType().FullName != "Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Optimize.AppDbModel")
+                            if (db.Model.GetType().FullName != "PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Optimize.AppDbModel")
                             {
                                 throw new InvalidOperationException($"The generated compiled model was not loaded. Actual model: {db.Model.GetType().FullName}");
                             }

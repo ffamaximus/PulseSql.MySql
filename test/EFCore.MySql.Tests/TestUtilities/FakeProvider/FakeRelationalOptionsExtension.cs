@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.TestUtilities.FakeProvider;
+namespace PulseSql.EntityFrameworkCore.MySql.TestUtilities.FakeProvider;
 
 public class FakeRelationalOptionsExtension : RelationalOptionsExtension
 {

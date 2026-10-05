@@ -4,7 +4,7 @@
 using System;
 using System.Data.Common;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     // ReSharper disable VirtualMemberCallInConstructor
     // ReSharper disable NonReadonlyMemberInGetHashCode

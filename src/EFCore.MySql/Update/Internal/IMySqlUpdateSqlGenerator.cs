@@ -6,7 +6,7 @@ using System.Text;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Update;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Update.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Update.Internal
 {
     public interface IMySqlUpdateSqlGenerator : IUpdateSqlGenerator
     {

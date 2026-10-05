@@ -4,9 +4,9 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Extensions.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Extensions.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Extensions
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Extensions
 {
     /// <summary>
     ///     Extension methods for <see cref="IProperty" /> for MySQL-specific metadata.

@@ -2,9 +2,9 @@
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.ValueComparison.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.ValueComparison.Internal
 {
     public interface IMySqlJsonValueComparer
     {

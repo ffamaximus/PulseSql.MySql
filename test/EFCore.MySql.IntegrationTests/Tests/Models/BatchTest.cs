@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models;
+using PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Tests.Models
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Tests.Models
 {
     public class BatchTest
     {

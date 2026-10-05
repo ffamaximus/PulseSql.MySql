@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
 
 public class MySqlQueryTranslationPreprocessor : RelationalQueryTranslationPreprocessor
 {

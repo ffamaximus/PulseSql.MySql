@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql
+namespace PulseSql.EntityFrameworkCore.MySql
 {
     public class MySqlOptionsExtensionTest
     {

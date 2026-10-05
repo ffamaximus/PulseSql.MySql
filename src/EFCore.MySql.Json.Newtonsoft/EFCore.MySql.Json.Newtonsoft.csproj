@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>JSON support using Newtonsoft.Json (JSON.NET) for Pomelo's MySQL provider for Entity Framework Core.</Description>
-    <TargetFramework>$(PomeloTargetFramework)</TargetFramework>
-    <AssemblyName>Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft</AssemblyName>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft</RootNamespace>
+    <Description>JSON support using Newtonsoft.Json (JSON.NET) for PulseSql's MySQL provider for Entity Framework Core.</Description>
+    <TargetFramework>$(PulseSqlTargetFramework)</TargetFramework>
+    <AssemblyName>PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft</AssemblyName>
+    <RootNamespace>PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft</RootNamespace>
     <IsPackable>true</IsPackable>
     <PackageTags>$(PackageTags);json;newtonsoft.json;json.net;newtonsoft</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>

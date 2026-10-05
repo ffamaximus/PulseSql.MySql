@@ -3,22 +3,21 @@
   <Import Project="Development.props" Condition="Exists('Development.props')" />
 
   <PropertyGroup>
-    <StrongNameKeyId>Pomelo.EntityFrameworkCore.MySql</StrongNameKeyId>
-    <PackageTags>pomelo;mysql;mariadb;Entity Framework Core;entity-framework-core;ef;efcore;ef core;orm;sql</PackageTags>
-    <Product>Pomelo.EntityFrameworkCore.MySql</Product>
-    <Authors>Laurents Meyer, Caleb Lloyd, Yuko Zheng</Authors>
-    <Company>Pomelo Foundation</Company>
-    <Copyright>Copyright $([System.DateTime]::Now.Year) © Pomelo Foundation</Copyright>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/19828814</PackageIconUrl>
+    <StrongNameKeyId>PulseSql.EntityFrameworkCore.MySql</StrongNameKeyId>
+    <PackageTags>pulsesql;pomelo;mysql;mariadb;Entity Framework Core;entity-framework-core;ef;efcore;ef core;orm;sql</PackageTags>
+    <Product>PulseSql.EntityFrameworkCore.MySql</Product>
+    <Authors>Jaime Andrés Mariño Londoño; based on Pomelo by Laurents Meyer, Caleb Lloyd, Yuko Zheng</Authors>
+    <Company>PulseSql</Company>
+    <Copyright>Copyright © $([System.DateTime]::Now.Year) PulseSql contributors. Portions Copyright © Pomelo Foundation.</Copyright>
     <PackageIcon>icon.png</PackageIcon>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql</RepositoryUrl>
+    <RepositoryUrl>https://github.com/PulseSql/PulseSql.EntityFrameworkCore.MySql</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -26,8 +25,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PomeloTargetFramework>net10.0</PomeloTargetFramework>
-    <PomeloTestTargetFramework>net10.0</PomeloTestTargetFramework>
+    <PulseSqlTargetFramework>net10.0</PulseSqlTargetFramework>
+    <PulseSqlTestTargetFramework>net10.0</PulseSqlTestTargetFramework>
     <EfCoreTargetFramework>net10.0</EfCoreTargetFramework>
     <EfCoreTestTargetFramework>net10.0</EfCoreTestTargetFramework>
     <MySqlConnectorTargetFramework>net8.0</MySqlConnectorTargetFramework>
@@ -35,7 +34,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)Pomelo.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)PulseSql.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 

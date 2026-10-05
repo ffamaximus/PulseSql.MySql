@@ -3,15 +3,15 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql.PackageConsumer</RootNamespace>
-    <AssemblyName>Pomelo.EntityFrameworkCore.MySql.PackageConsumer</AssemblyName>
+    <RootNamespace>PulseSql.EntityFrameworkCore.MySql.PackageConsumer</RootNamespace>
+    <AssemblyName>PulseSql.EntityFrameworkCore.MySql.PackageConsumer</AssemblyName>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
 
     <!-- This project must resolve the provider as a package, never as a project reference. -->
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-    <ConsumerProviderVersion Condition="'$(ConsumerProviderVersion)' == ''">10.0.0-rtm.3</ConsumerProviderVersion>
+    <ConsumerProviderVersion Condition="'$(ConsumerProviderVersion)' == ''">10.0.0-preview.1</ConsumerProviderVersion>
     <ConsumerEfCoreVersion Condition="'$(ConsumerEfCoreVersion)' == ''">10.0.0</ConsumerEfCoreVersion>
   </PropertyGroup>
 
@@ -22,10 +22,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(ConsumerEfCoreVersion)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(ConsumerEfCoreVersion)" PrivateAssets="all" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.11" PrivateAssets="all" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="$(ConsumerProviderVersion)" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Json.Microsoft" Version="$(ConsumerProviderVersion)" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft" Version="$(ConsumerProviderVersion)" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.NetTopologySuite" Version="$(ConsumerProviderVersion)" />
+    <PackageReference Include="PulseSql.EntityFrameworkCore.MySql" Version="$(ConsumerProviderVersion)" />
+    <PackageReference Include="PulseSql.EntityFrameworkCore.MySql.Json.Microsoft" Version="$(ConsumerProviderVersion)" />
+    <PackageReference Include="PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft" Version="$(ConsumerProviderVersion)" />
+    <PackageReference Include="PulseSql.EntityFrameworkCore.MySql.NetTopologySuite" Version="$(ConsumerProviderVersion)" />
   </ItemGroup>
 
 </Project>

@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Newtonsoft.Json.Linq;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.ValueComparison.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.ValueConversion.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.ValueComparison.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.ValueConversion.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft.Storage.Internal
 {
     public class MySqlJsonNewtonsoftTypeMappingSourcePlugin : MySqlJsonTypeMappingSourcePlugin
     {

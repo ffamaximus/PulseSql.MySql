@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models
 {
 
 	public static class CrmMeta

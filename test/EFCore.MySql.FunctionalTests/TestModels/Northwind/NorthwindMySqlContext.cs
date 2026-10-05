@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.TestModels.Northwind;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestModels.Northwind;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestModels.Northwind;
 
 public class NorthwindMySqlContext : NorthwindRelationalContext
 {

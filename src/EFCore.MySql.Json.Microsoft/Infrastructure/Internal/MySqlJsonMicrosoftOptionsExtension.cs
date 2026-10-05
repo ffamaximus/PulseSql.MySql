@@ -5,10 +5,10 @@ using System;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Infrastructure.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Infrastructure.Internal
 {
     public class MySqlJsonMicrosoftOptionsExtension : MySqlJsonOptionsExtension
     {

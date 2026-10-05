@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal;
 using Microsoft.EntityFrameworkCore.Scaffolding;
 using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.Extensions.Logging;
-using Pomelo.EntityFrameworkCore.MySql.Diagnostics.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Diagnostics.Internal;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -16,9 +16,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities
 {
     public class MySqlDatabaseCleaner : RelationalDatabaseCleaner
     {

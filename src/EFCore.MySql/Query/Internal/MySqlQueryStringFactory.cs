@@ -10,7 +10,7 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Query.Internal
 {
     // Based on: System.Data.Jet.JetCommandParser (EntityFrameworkCore.Jet)
     public class MySqlQueryStringFactory : IRelationalQueryStringFactory

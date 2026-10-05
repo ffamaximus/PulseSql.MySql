@@ -5,7 +5,7 @@ using System.Collections;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     public class ByteArrayComparer : ValueComparer<byte[]>
     {

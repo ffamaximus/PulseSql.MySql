@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
 {
     public class GraphUpdatesMySqlClientNoActionTest : GraphUpdatesMySqlTestBase<GraphUpdatesMySqlClientNoActionTest.MySqlFixture>
     {

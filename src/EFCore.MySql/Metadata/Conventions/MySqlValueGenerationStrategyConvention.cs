@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Metadata.Conventions;
+namespace PulseSql.EntityFrameworkCore.MySql.Metadata.Conventions;
 
 /// <summary>
 ///     A convention that configures the default model <see cref="MySqlValueGenerationStrategy" /> as

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Query;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query;
 
 public class CaseSensitiveWithStringComparisonNorthwindQueryMySqlFixture<TModelCustomizer> : CaseSensitiveNorthwindQueryMySqlFixture<TModelCustomizer>
     where TModelCustomizer : ITestModelCustomizer, new()

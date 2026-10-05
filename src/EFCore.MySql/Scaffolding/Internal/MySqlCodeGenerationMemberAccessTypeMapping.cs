@@ -5,7 +5,7 @@ using System;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal
 {
     internal class MySqlCodeGenerationMemberAccessTypeMapping : RelationalTypeMapping
     {

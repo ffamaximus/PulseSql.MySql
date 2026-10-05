@@ -27,10 +27,10 @@ var packageAssemblies = new[]
 
 var expectedPackageNames = new[]
 {
-    "Pomelo.EntityFrameworkCore.MySql",
-    "Pomelo.EntityFrameworkCore.MySql.Json.Microsoft",
-    "Pomelo.EntityFrameworkCore.MySql.Json.Newtonsoft",
-    "Pomelo.EntityFrameworkCore.MySql.NetTopologySuite"
+    "PulseSql.EntityFrameworkCore.MySql",
+    "PulseSql.EntityFrameworkCore.MySql.Json.Microsoft",
+    "PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft",
+    "PulseSql.EntityFrameworkCore.MySql.NetTopologySuite"
 };
 
 if (!expectedPackageNames.All(expectedName => packageAssemblies.Any(assembly => assembly.GetName().Name == expectedName)))
@@ -120,7 +120,7 @@ Console.WriteLine("Package consumer smoke passed: model creation, CRUD, and tran
 static void AssertProviderRegistration(DbContextOptions<SmokeContext> options, string extensionName)
 {
     using var context = new SmokeContext(options);
-    if (context.Database.ProviderName != "Pomelo.EntityFrameworkCore.MySql")
+    if (context.Database.ProviderName != "PulseSql.EntityFrameworkCore.MySql")
     {
         throw new InvalidOperationException($"The {extensionName} options were not registered with Pomelo.");
     }

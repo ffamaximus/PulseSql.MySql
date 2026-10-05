@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query
+namespace PulseSql.EntityFrameworkCore.MySql.Query
 {
     public sealed class MySqlTimeZoneTest : TestWithFixture<MySqlTimeZoneTest.MySqlTimeZoneFixture>
     {

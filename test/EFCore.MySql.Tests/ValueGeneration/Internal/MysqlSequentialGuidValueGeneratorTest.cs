@@ -2,12 +2,12 @@ using System;
 using System.Linq;
 using Moq;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
-using Pomelo.EntityFrameworkCore.MySql.ValueGeneration.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.ValueGeneration.Internal;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Tests.ValueGeneration.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Tests.ValueGeneration.Internal
 {
     public class MysqlSequentialGuidValueGeneratorTest
     {

@@ -1,10 +1,10 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Storage;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Migrations
+namespace PulseSql.EntityFrameworkCore.MySql.Migrations
 {
     public class ServerVersionTest
     {

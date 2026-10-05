@@ -1,9 +1,9 @@
-﻿using Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models;
+﻿using PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests
 {
     public class AppDb : IdentityDbContext<AppIdentityUser>
     {

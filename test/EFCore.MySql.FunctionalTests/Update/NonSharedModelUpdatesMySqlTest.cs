@@ -2,10 +2,10 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.EntityFrameworkCore.Update;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Update;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Update;
 
 public class NonSharedModelUpdatesMySqlTest(NonSharedFixture fixture) : NonSharedModelUpdatesTestBase(fixture)
 {

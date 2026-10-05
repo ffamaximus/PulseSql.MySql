@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
-using Pomelo.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
+using PulseSql.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Query
+namespace PulseSql.EntityFrameworkCore.MySql.Query
 {
     public sealed class MySqlCollationTest : TestWithFixture<MySqlCollationTest.MySqlCollationFixture>
     {

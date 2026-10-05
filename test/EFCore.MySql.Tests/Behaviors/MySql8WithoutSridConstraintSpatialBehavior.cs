@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Tests.TestUtilities.Attributes;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Behaviors
+namespace PulseSql.EntityFrameworkCore.MySql.Behaviors
 {
     [SupportedServerVersionCondition(nameof(ServerVersionSupport.SpatialSetSridFunction))]
     public class MySql8WithoutSridConstraintSpatialBehavior : RawSqlTestWithFixture<MySql8WithoutSridConstraintSpatialBehavior.MySql8WithoutSridConstraintSpatialBehaviorFixture>

@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>$(PomeloTestTargetFramework)</TargetFramework>
+    <TargetFramework>$(PulseSqlTestTargetFramework)</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>Pomelo.EntityFrameworkCore.MySql.Tests</AssemblyName>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
+    <AssemblyName>PulseSql.EntityFrameworkCore.MySql.Tests</AssemblyName>
+    <RootNamespace>PulseSql.EntityFrameworkCore.MySql</RootNamespace>
     <DefaultItemExcludes>$(DefaultItemExcludes);*.trx</DefaultItemExcludes>
   </PropertyGroup>
 

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Pomelo.EntityFrameworkCore.TestUtilities
+namespace PulseSql.EntityFrameworkCore.TestUtilities
 {
     public class BuildFileResult
     {

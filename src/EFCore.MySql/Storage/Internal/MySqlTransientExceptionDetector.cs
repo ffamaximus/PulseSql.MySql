@@ -5,7 +5,7 @@ using System;
 using JetBrains.Annotations;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     /// <summary>
     ///     Detects the exceptions caused by MySQL transient failures.

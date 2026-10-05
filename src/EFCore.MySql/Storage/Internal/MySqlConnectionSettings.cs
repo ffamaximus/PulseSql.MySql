@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using MySqlConnector;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
 {
     public class MySqlConnectionSettings
     {

@@ -22,13 +22,13 @@ using Microsoft.EntityFrameworkCore.TestUtilities;
 using Microsoft.Extensions.DependencyInjection;
 using NetTopologySuite.Geometries;
 using NetTopologySuite;
-using Pomelo.EntityFrameworkCore.MySql.Design.Internal;
-using Pomelo.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Design.Internal;
+using PulseSql.EntityFrameworkCore.MySql.FunctionalTests.TestUtilities;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
 using Xunit;
 
-namespace Pomelo.EntityFrameworkCore.MySql.FunctionalTests.Scaffolding;
+namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Scaffolding;
 
 // TODO: Add more Pomelo specific cases.
 public class CompiledModelMySqlTest(NonSharedFixture fixture) : CompiledModelRelationalTestBase(fixture)
@@ -361,8 +361,8 @@ public class CompiledModelMySqlTest(NonSharedFixture fixture) : CompiledModelRel
     protected override BuildSource AddReferences(BuildSource build, [CallerFilePath] string filePath = "")
     {
         base.AddReferences(build);
-        build.References.Add(BuildReference.ByName("Pomelo.EntityFrameworkCore.MySql"));
-        build.References.Add(BuildReference.ByName("Pomelo.EntityFrameworkCore.MySql.NetTopologySuite"));
+        build.References.Add(BuildReference.ByName("PulseSql.EntityFrameworkCore.MySql"));
+        build.References.Add(BuildReference.ByName("PulseSql.EntityFrameworkCore.MySql.NetTopologySuite"));
         build.References.Add(BuildReference.ByName("NetTopologySuite"));
         return build;
     }

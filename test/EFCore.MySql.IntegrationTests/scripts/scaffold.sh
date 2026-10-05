@@ -41,7 +41,7 @@ dotnet tool restore
 mkdir "$target_directory"
 target_directory_created=true
 
-dotnet ef dbcontext scaffold "$connection_string" Pomelo.EntityFrameworkCore.MySql \
+dotnet ef dbcontext scaffold "$connection_string" PulseSql.EntityFrameworkCore.MySql \
   --project "$project_file" \
   --startup-project "$project_file" \
   --context ScaffoldContext \

@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Models;
+using PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Controllers
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Controllers
 {
     [Route("api/[controller]")]
     public class SyncController : Controller

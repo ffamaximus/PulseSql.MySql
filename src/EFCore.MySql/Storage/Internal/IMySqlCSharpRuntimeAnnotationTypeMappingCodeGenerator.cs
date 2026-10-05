@@ -3,7 +3,7 @@
 
 using Microsoft.EntityFrameworkCore.Design.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
 public interface IMySqlCSharpRuntimeAnnotationTypeMappingCodeGenerator
 {

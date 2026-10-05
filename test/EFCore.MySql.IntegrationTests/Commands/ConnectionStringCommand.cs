@@ -1,7 +1,7 @@
 using System;
-using Pomelo.EntityFrameworkCore.MySql.Tests;
+using PulseSql.EntityFrameworkCore.MySql.Tests;
 
-namespace Pomelo.EntityFrameworkCore.MySql.IntegrationTests.Commands
+namespace PulseSql.EntityFrameworkCore.MySql.IntegrationTests.Commands
 {
     public class ConnectionStringCommand : IConnectionStringCommand
     {

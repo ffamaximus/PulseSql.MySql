@@ -4,7 +4,7 @@
 using System.Data;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
 
 public class MySqlULongTypeMapping : ULongTypeMapping
 {

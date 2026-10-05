@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Scaffolding;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Scaffolding.Internal
 {
     public class MySqlJsonMicrosoftCodeGeneratorPlugin : ProviderCodeGeneratorPlugin
     {

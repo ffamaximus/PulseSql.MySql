@@ -4,9 +4,9 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Internal
 {
     public static class MySqlValueGenerationStrategyCompatibility
     {

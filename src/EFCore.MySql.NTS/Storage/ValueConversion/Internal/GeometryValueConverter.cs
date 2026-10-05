@@ -9,7 +9,7 @@ using NetTopologySuite;
 using NetTopologySuite.Geometries;
 using NetTopologySuite.IO;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.ValueConversion.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.ValueConversion.Internal
 {
     internal static class GeometryValueConverter
     {

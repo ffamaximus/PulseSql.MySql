@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>NetTopologySuite support for Pomelo's MySQL provider for Entity Framework Core.</Description>
-    <TargetFramework>$(PomeloTargetFramework)</TargetFramework>
-    <AssemblyName>Pomelo.EntityFrameworkCore.MySql.NetTopologySuite</AssemblyName>
-    <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
+    <Description>NetTopologySuite support for PulseSql's MySQL provider for Entity Framework Core.</Description>
+    <TargetFramework>$(PulseSqlTargetFramework)</TargetFramework>
+    <AssemblyName>PulseSql.EntityFrameworkCore.MySql.NetTopologySuite</AssemblyName>
+    <RootNamespace>PulseSql.EntityFrameworkCore.MySql</RootNamespace>
     <IsPackable>true</IsPackable>
     <PackageTags>$(PackageTags);gis;opengis;nts;ogc;spatial</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -100,7 +100,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\MySqlNTSStrings.resx">
-      <CustomToolNamespace>Pomelo.EntityFrameworkCore.MySql.Internal</CustomToolNamespace>
+      <CustomToolNamespace>PulseSql.EntityFrameworkCore.MySql.Internal</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal.Json;
+namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal.Json;
 
 public sealed class MySqlJsonByteArrayAsHexStringReaderWriter : JsonValueReaderWriter<byte[]>
 {

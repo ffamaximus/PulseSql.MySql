@@ -3,7 +3,7 @@
 
 using System.Reflection;
 
-namespace Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Scaffolding.Internal
 {
     internal class MySqlCodeGenerationMemberAccess
     {

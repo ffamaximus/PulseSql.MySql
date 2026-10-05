@@ -7,7 +7,7 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 // ReSharper disable once CheckNamespace
-namespace Pomelo.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueConversion.Internal
+namespace PulseSql.EntityFrameworkCore.MySql.Json.Microsoft.Storage.ValueConversion.Internal
 {
     public class MySqlJsonMicrosoftStringValueConverter : ValueConverter<string, string>
     {

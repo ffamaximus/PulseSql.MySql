@@ -2,12 +2,12 @@
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
 using System;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Migrations.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Update.Internal;
-using Pomelo.EntityFrameworkCore.MySql.ValueGeneration.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Migrations.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Storage.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Update.Internal;
+using PulseSql.EntityFrameworkCore.MySql.ValueGeneration.Internal;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -19,14 +19,14 @@ using Microsoft.EntityFrameworkCore.Utilities;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
 using Microsoft.EntityFrameworkCore.Query;
-using Pomelo.EntityFrameworkCore.MySql.Diagnostics.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Diagnostics.Internal;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Metadata.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Migrations;
-using Pomelo.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Query.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Infrastructure;
+using PulseSql.EntityFrameworkCore.MySql.Metadata.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Migrations;
+using PulseSql.EntityFrameworkCore.MySql.Query.ExpressionVisitors.Internal;
+using PulseSql.EntityFrameworkCore.MySql.Query.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.DependencyInjection
         ///         Use this method when using dependency injection in your application, such as with ASP.NET Core.
         ///         For applications that don't use dependency injection, consider creating <see cref="DbContext" />
         ///         instances directly with its constructor. The <see cref="DbContext.OnConfiguring" /> method can then be
-        ///         overridden to configure the Pomelo.EntityFrameworkCore.MySql provider and connection string.
+        ///         overridden to configure the PulseSql.EntityFrameworkCore.MySql provider and connection string.
         ///     </para>
         ///     <para>
         ///         To configure the <see cref="DbContextOptions{TContext}" /> for the context, either override the
