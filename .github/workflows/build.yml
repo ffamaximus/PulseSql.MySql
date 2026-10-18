@@ -6,9 +6,6 @@ on:
   pull_request:
     branches:
       - '**'
-  release:
-    types:
-      - published
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -347,8 +344,8 @@ jobs:
           if-no-files-found: error
   NuGet:
     needs: [BuildAndTest, PackageConsumer]
-    # Publishing is opt-in: set the repository variable PULSESQL_PUBLISH=true and the secret NUGET_API_KEY.
-    if: (github.event_name == 'push' || github.event_name == 'release') && vars.PULSESQL_PUBLISH == 'true'
+    # CI packages only (uploaded as a workflow artifact). Publishing to nuget.org is done by release.yml.
+    if: github.event_name == 'push' && vars.PULSESQL_CI_PACK == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -438,8 +435,3 @@ jobs:
         with:
           name: nupkgs
           path: nupkgs
-      - name: "NuGet Push - nuget.org - Release"
-        if: ${{ env.pushToNugetOrg == 'true' }}
-        working-directory: nupkgs
-        shell: pwsh
-        run: dotnet nuget push './Release/default/**/*.nupkg' --api-key '${{ secrets.NUGET_API_KEY }}' --source 'https://api.nuget.org/v3/index.json' --skip-duplicate

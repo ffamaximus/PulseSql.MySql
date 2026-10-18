@@ -1,0 +1,251 @@
+name: Release
+
+# Publishes the PulseSql.EntityFrameworkCore.MySql packages to nuget.org.
+#
+#   * GitHub Release published (tag "10.0.0", "v10.0.0" or "v10.0.0-preview.1")
+#       -> build + tests against MySQL and MariaDB -> pack -> push to nuget.org -> attach .nupkg to the Release
+#   * Manual run (Actions > Release > Run workflow)
+#       -> same build, tests and pack, but never pushes (dry run). Packages are available as a workflow artifact.
+#
+# Requirements (Settings > Secrets and variables > Actions, or the "nuget" environment):
+#   NUGET_API_KEY  nuget.org API key with "Push" scope limited to the glob "PulseSql.EntityFrameworkCore.MySql*"
+#
+# The tag must match Version.props: a pre-release tag (e.g. 10.0.0-preview.1) must equal
+# VersionPrefix-PreReleaseVersionLabel.PreReleaseVersionIteration; a stable tag (e.g. 10.0.0) must equal VersionPrefix.
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build (dry run, nothing is pushed). Must match Version.props, e.g. 10.0.0-preview.1'
+        required: true
+        type: string
+      full_functional_tests:
+        description: 'Run the complete functional test suite instead of the release smoke subset'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: release-${{ github.event.release.tag_name || inputs.version }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  # Representative functional test classes run before every release (queries, JSON, bulk updates,
+  # migrations, updates, transactions and data types). Use the manual run with full_functional_tests to run everything.
+  releaseFunctionalTestFilter: >-
+    FullyQualifiedName~NorthwindWhereQueryMySqlTest|FullyQualifiedName~NorthwindSelectQueryMySqlTest|FullyQualifiedName~NorthwindFunctionsQueryMySqlTest|FullyQualifiedName~NorthwindAggregateOperatorsQueryMySqlTest|FullyQualifiedName~NorthwindBulkUpdatesMySqlTest|FullyQualifiedName~ComplexTypeQueryMySqlTest|FullyQualifiedName~PrimitiveCollectionsQueryMySqlTest|FullyQualifiedName~ComplexCollectionJsonUpdateMySqlTest|FullyQualifiedName~BuiltInDataTypesMySqlTest|FullyQualifiedName~MigrationsMySqlTest|FullyQualifiedName~UpdatesMySqlTest|FullyQualifiedName~TransactionMySqlTest
+
+jobs:
+  Prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      isPrerelease: ${{ steps.version.outputs.isPrerelease }}
+      publish: ${{ steps.version.outputs.publish }}
+    steps:
+      - name: Resolve version
+        id: version
+        shell: bash
+        env:
+          TAG_NAME: ${{ github.event.release.tag_name }}
+          INPUT_VERSION: ${{ inputs.version }}
+          RELEASE_IS_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "release" ]]; then
+            raw="$TAG_NAME"
+            publish=true
+          else
+            raw="$INPUT_VERSION"
+            publish=false
+          fi
+          version="${raw#v}"
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z]+(\.[0-9A-Za-z]+)*)?$ ]]; then
+            echo "::error::'$raw' is not a valid version tag (expected e.g. v10.0.0 or v10.0.0-preview.1)"
+            exit 1
+          fi
+          isPrerelease=false
+          [[ "$version" == *-* ]] && isPrerelease=true
+          if [[ "$GITHUB_EVENT_NAME" == "release" && "$isPrerelease" != "$RELEASE_IS_PRERELEASE" ]]; then
+            echo "::warning::Version '$version' prerelease=$isPrerelease but the GitHub Release is marked prerelease=$RELEASE_IS_PRERELEASE"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "isPrerelease=$isPrerelease" >> "$GITHUB_OUTPUT"
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+          echo "### Release $version (publish: $publish)" >> "$GITHUB_STEP_SUMMARY"
+
+  Test:
+    needs: Prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: mysql-8.4
+            image: mysql:8.4
+            client: mysql
+            healthCmd: mysqladmin ping -h 127.0.0.1 -uroot -pPassword12!
+            sqlMode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+            maxParallelThreads: 0
+          - name: mariadb-11.4
+            image: mariadb:11.4
+            client: mariadb
+            healthCmd: healthcheck.sh --connect --innodb_initialized
+            # Currently no ONLY_FULL_GROUP_BY for MariaDB (upstream Pomelo #1167).
+            sqlMode: STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+            maxParallelThreads: 1
+    name: Test (${{ matrix.name }})
+    services:
+      db:
+        image: ${{ matrix.image }}
+        env:
+          MYSQL_ROOT_PASSWORD: Password12!
+          MARIADB_ROOT_PASSWORD: Password12!
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "${{ matrix.healthCmd }}"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Configure database server
+        shell: bash
+        run: |
+          docker exec "${{ job.services.db.id }}" ${{ matrix.client }} -uroot -pPassword12! \
+            -e "SET GLOBAL sql_mode = '${{ matrix.sqlMode }}'; SET GLOBAL max_connections = 512; SELECT @@version;"
+      - name: Configure tests
+        shell: bash
+        run: cp test/EFCore.MySql.FunctionalTests/config.json.example test/EFCore.MySql.FunctionalTests/config.json
+      - name: Build
+        shell: bash
+        run: |
+          dotnet build test/EFCore.MySql.Tests -c Release -p:TreatWarningsAsErrors=true
+          dotnet build test/EFCore.MySql.FunctionalTests -c Release -p:TreatWarningsAsErrors=true
+      - name: Unit tests
+        shell: bash
+        run: dotnet test test/EFCore.MySql.Tests -c Release --no-build --logger "GitHubActions;report-warnings=false"
+      - name: Functional tests
+        shell: bash
+        env:
+          FULL_SUITE: ${{ inputs.full_functional_tests || false }}
+        run: |
+          filter=()
+          if [[ "$FULL_SUITE" != "true" ]]; then
+            filter=(--filter "$releaseFunctionalTestFilter")
+          fi
+          dotnet test test/EFCore.MySql.FunctionalTests -c Release --no-build \
+            --logger "GitHubActions;report-warnings=false" "${filter[@]}" \
+            -- xUnit.MaxParallelThreads=${{ matrix.maxParallelThreads }}
+
+  Pack:
+    needs: [Prepare, Test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Pack
+        shell: bash
+        env:
+          VERSION: ${{ needs.Prepare.outputs.version }}
+          REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          set -euo pipefail
+          for project in src/*/*.csproj; do
+            # OfficialVersion makes the build fail if the tag does not match Version.props.
+            dotnet pack "$project" -c Release -o nupkgs \
+              -p:OfficialVersion="$VERSION" \
+              -p:ContinuousIntegrationBuild=true \
+              -p:RepositoryUrl="$REPOSITORY_URL" \
+              -p:PackageProjectUrl="$REPOSITORY_URL" \
+              -p:RepositoryCommit="$GITHUB_SHA"
+          done
+      - name: Verify packages
+        shell: bash
+        env:
+          VERSION: ${{ needs.Prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+          expected=(
+            PulseSql.EntityFrameworkCore.MySql
+            PulseSql.EntityFrameworkCore.MySql.Json.Microsoft
+            PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft
+            PulseSql.EntityFrameworkCore.MySql.NetTopologySuite
+          )
+          for id in "${expected[@]}"; do
+            for ext in nupkg snupkg; do
+              file="nupkgs/$id.$VERSION.$ext"
+              [[ -f "$file" ]] || { echo "::error::Missing $file"; ls -la nupkgs; exit 1; }
+            done
+          done
+          count=$(ls nupkgs/*.nupkg | wc -l)
+          [[ "$count" -eq "${#expected[@]}" ]] || { echo "::error::Expected ${#expected[@]} packages, found $count"; exit 1; }
+          { echo "| Package | Size |"; echo "|---|---|"; for f in nupkgs/*; do echo "| $(basename "$f") | $(du -h "$f" | cut -f1) |"; done; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: nupkgs-${{ needs.Prepare.outputs.version }}
+          path: nupkgs
+          if-no-files-found: error
+
+  Publish:
+    needs: [Prepare, Pack]
+    if: needs.Prepare.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    # Optional: add required reviewers to the "nuget" environment for a manual approval before pushing.
+    environment:
+      name: nuget
+      url: https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/${{ needs.Prepare.outputs.version }}
+    permissions:
+      contents: write
+    steps:
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nupkgs-${{ needs.Prepare.outputs.version }}
+          path: nupkgs
+      - name: Push to nuget.org
+        shell: bash
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          set -euo pipefail
+          [[ -n "$NUGET_API_KEY" ]] || { echo "::error::Secret NUGET_API_KEY is not configured"; exit 1; }
+          # Symbol packages (.snupkg) next to each .nupkg are pushed automatically.
+          dotnet nuget push "nupkgs/*.nupkg" --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Attach packages to the GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG_NAME" nupkgs/* --clobber --repo "$GITHUB_REPOSITORY"

@@ -54,10 +54,29 @@ Qué NO se renombra a propósito:
 4. `dotnet build` → corregir APIs; `dotnet test` contra MySQL y MariaDB; actualizar baselines SQL.
 5. Para EF Core 11: crear rama `11.0-wip`; mantener `10.0-maint` para servicing.
 
-## Publicación
+## Publicación (`.github/workflows/release.yml`)
 
-El job `NuGet` de `.github/workflows/build.yml` solo corre si la variable de repositorio `PULSESQL_PUBLISH=true`.
-Publica en nuget.org al crear un *release* con tag `X.Y.Z[-sufijo]` usando el secreto `NUGET_API_KEY`.
+Flujo: **Prepare** (versión desde el tag) → **Test** (unit + funcionales de humo contra MySQL 8.4 y MariaDB 11.4)
+→ **Pack** (4 `.nupkg` + `.snupkg`, verificados) → **Publish** (nuget.org + adjunta paquetes al Release).
+
+Configuración única:
+
+1. En nuget.org: *API Keys → Create*, scope **Push new packages and package versions**, glob
+   `PulseSql.EntityFrameworkCore.MySql*`, expiración 365 días (anota la fecha para rotarla).
+2. En GitHub: *Settings → Environments → New environment* `nuget`; agrega el secreto `NUGET_API_KEY`.
+   Opcional: *Required reviewers* para aprobar manualmente cada push.
+
+Publicar una versión:
+
+1. Ajusta `Version.props` (`VersionPrefix`, `PreReleaseVersionLabel`, `PreReleaseVersionIteration`) y haz push.
+2. Crea un Release con tag igual a la versión: `v10.0.0-preview.1` (marca *pre-release*) o `v10.0.0` para estable.
+   Si el tag no coincide con `Version.props`, el job **Pack** falla y no se publica nada.
+
+Ensayo sin publicar: *Actions → Release → Run workflow* con la versión (opcional `full_functional_tests`);
+los paquetes quedan como artifact del run.
+
+`build.yml` es la CI completa heredada de Pomelo (2 SO × 9 BD) y ya no publica; su job `NuGet` solo empaqueta
+si la variable `PULSESQL_CI_PACK=true`.
 
 ## Clave de strong-name
 
