@@ -937,7 +937,16 @@ WHERE `c`.`CustomerID` LIKE 'F%'
 
     public override async Task Update_Where_Skip_set_constant(bool async)
     {
-        await base.Update_Where_Skip_set_constant(async);
+        // The base test uses Skip() without OrderBy(), so which rows are skipped is undefined in SQL. MySQL 8.4 may pick
+        // a different plan (e.g. a covering secondary index) for the verification SELECT than for the UPDATE subquery,
+        // which makes the test fail intermittently. Order by the key so both statements select the same rows.
+        await AssertUpdate(
+            async,
+            ss => ss.Set<Customer>().Where(c => c.CustomerID.StartsWith("F")).OrderBy(c => c.CustomerID).Skip(4),
+            e => e,
+            s => s.SetProperty(c => c.ContactName, "Updated"),
+            rowsAffectedCount: 4,
+            (b, a) => Assert.All(a, c => Assert.Equal("Updated", c.ContactName)));
 
         AssertExecuteUpdateSql(
             """
@@ -949,6 +958,7 @@ INNER JOIN (
     SELECT `c`.`CustomerID`
     FROM `Customers` AS `c`
     WHERE `c`.`CustomerID` LIKE 'F%'
+    ORDER BY `c`.`CustomerID`
     LIMIT 18446744073709551610 OFFSET @p
 ) AS `c1` ON `c0`.`CustomerID` = `c1`.`CustomerID`
 SET `c0`.`ContactName` = @p0
