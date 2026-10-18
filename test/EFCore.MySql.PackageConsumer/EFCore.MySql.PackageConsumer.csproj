@@ -21,7 +21,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(ConsumerEfCoreVersion)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(ConsumerEfCoreVersion)" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(ConsumerEfCoreVersion)" PrivateAssets="all" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.11" PrivateAssets="all" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" PrivateAssets="all" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.13" PrivateAssets="all" />
     <PackageReference Include="PulseSql.EntityFrameworkCore.MySql" Version="$(ConsumerProviderVersion)" />
     <PackageReference Include="PulseSql.EntityFrameworkCore.MySql.Json.Microsoft" Version="$(ConsumerProviderVersion)" />
     <PackageReference Include="PulseSql.EntityFrameworkCore.MySql.Json.Newtonsoft" Version="$(ConsumerProviderVersion)" />
