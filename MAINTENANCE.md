@@ -70,7 +70,7 @@ Configuración única (Trusted Publishing, sin API key guardada):
 Publicar una versión:
 
 1. Ajusta `Version.props` (`VersionPrefix`, `PreReleaseVersionLabel`, `PreReleaseVersionIteration`) y haz push.
-2. Crea un Release con tag igual a la versión: `v10.0.0-preview.1` (marca *pre-release*) o `v10.0.0` para estable.
+2. Crea un Release con tag igual a la versión: `v10.0.0-preview.2` (marca *pre-release*) o `v10.0.0` para estable.
    Si el tag no coincide con `Version.props`, el job **Pack** falla y no se publica nada.
 
 Ensayo sin publicar: *Actions → Release → Run workflow* con la versión (opcional `full_functional_tests`);

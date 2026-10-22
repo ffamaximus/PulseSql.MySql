@@ -15,7 +15,7 @@ of EF Core database providers.
 
 | PulseSql | EF Core | .NET  | MySqlConnector |
 |----------|:-------:|:-----:|:--------------:|
-| 10.0.x   | 10.0.x  | 10.0+ | >= 2.4.0       |
+| 10.0.x   | >= 10.0.13 | 10.0+ | >= 2.6.2    |
 
 ### Packages
 
@@ -33,7 +33,7 @@ MySQL 8.4, 8.0 · MariaDB 11.6, 11.5, 11.4 (LTS), 11.3, 10.11 (LTS), 10.6 (LTS),
 ## Getting started
 
 ```xml
-<PackageReference Include="PulseSql.EntityFrameworkCore.MySql" Version="10.0.0-preview.1" />
+<PackageReference Include="PulseSql.EntityFrameworkCore.MySql" Version="10.0.0-preview.2" />
 ```
 
 ```csharp

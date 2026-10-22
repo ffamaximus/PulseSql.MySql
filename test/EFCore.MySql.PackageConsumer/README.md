@@ -9,13 +9,13 @@ Run the complete local check from the repository root:
 ./test/EFCore.MySql.PackageConsumer/scripts/package-consumer.sh
 ```
 
-The script compiles the provider against EF Core `10.0.0`, creates local packages whose
-dependencies declare `[10.0.0,10.0.999]`, and runs four independent consumers:
+The script compiles the provider against EF Core `10.0.13`, creates local packages whose
+dependencies declare `[10.0.13,10.0.999]`, and runs four independent consumers:
 
-* EF Core `10.0.0` against MySQL `8.4.3`.
-* EF Core `10.0.0` against MariaDB `11.6.2`.
-* EF Core `10.0.11` against MySQL `8.4.3`.
-* EF Core `10.0.11` against MariaDB `11.6.2`.
+* EF Core `10.0.13` against MySQL `8.4.3`.
+* EF Core `10.0.13` against MariaDB `11.6.2`.
+* EF Core `10.0.13` against MySQL `8.4.3`.
+* EF Core `10.0.13` against MariaDB `11.6.2`.
 
 Each consumer restores from the local package directory into a fresh NuGet cache, uses the
 public `dotnet ef migrations add` and `database update` commands, then runs model construction,

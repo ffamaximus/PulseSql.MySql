@@ -8,9 +8,9 @@ consumer_project="$repository_root/test/EFCore.MySql.PackageConsumer/EFCore.MySq
 consumer_project_directory="$(dirname -- "$consumer_project")"
 consumer_nuget_config="$repository_root/test/EFCore.MySql.PackageConsumer/NuGet.config"
 package_output="${PACKAGE_OUTPUT:-$repository_root/artifacts/packages}"
-provider_version="${POMELO_PACKAGE_VERSION:-10.0.0-preview.1}"
-efcore_floor_version="${EFCORE_FLOOR_VERSION:-10.0.0}"
-efcore_latest_version="${EFCORE_LATEST_VERSION:-10.0.11}"
+provider_version="${POMELO_PACKAGE_VERSION:-10.0.0-preview.2}"
+efcore_floor_version="${EFCORE_FLOOR_VERSION:-10.0.13}"
+efcore_latest_version="${EFCORE_LATEST_VERSION:-10.0.13}"
 mysql_image="${MYSQL_IMAGE:-mysql:8.4.3}"
 mariadb_image="${MARIADB_IMAGE:-mariadb:11.6.2}"
 database_password="${DATABASE_PASSWORD:-Password12!}"
@@ -156,7 +156,7 @@ if [[ "${SKIP_PACKAGE:-false}" != "true" ]]; then
     done
 
     # A range restore makes the generated nuspec retain the declared compatibility range. The
-    # no-build pack then packages the binaries compiled against the 10.0.0 floor above.
+    # no-build pack then packages the binaries compiled against the EF Core floor above.
     for project in "${source_projects[@]}"; do
         run_dotnet restore "$project" \
             --no-cache \
@@ -174,12 +174,12 @@ if [[ "${SKIP_PACKAGE:-false}" != "true" ]]; then
 
     provider_package="$package_output/PulseSql.EntityFrameworkCore.MySql.$provider_version.nupkg"
     provider_nuspec="$(unzip -p "$provider_package" '*.nuspec')"
-    if [[ "$provider_nuspec" != *'version="[10.0.0, 10.0.999]"'* ]]; then
-        printf 'The provider package does not declare EF Core [10.0.0,10.0.999].\n' >&2
+    if [[ "$provider_nuspec" != *'version="[10.0.13, 10.0.999]"'* ]]; then
+        printf 'The provider package does not declare EF Core [10.0.13,10.0.999].\n' >&2
         exit 1
     fi
 
-    printf 'Provider package declares EF Core [10.0.0,10.0.999].\n'
+    printf 'Provider package declares EF Core [10.0.13,10.0.999].\n'
 fi
 
 assert_restored_packages() {

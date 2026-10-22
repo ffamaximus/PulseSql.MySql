@@ -11,8 +11,8 @@
 
     <!-- This project must resolve the provider as a package, never as a project reference. -->
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
-    <ConsumerProviderVersion Condition="'$(ConsumerProviderVersion)' == ''">10.0.0-preview.1</ConsumerProviderVersion>
-    <ConsumerEfCoreVersion Condition="'$(ConsumerEfCoreVersion)' == ''">10.0.0</ConsumerEfCoreVersion>
+    <ConsumerProviderVersion Condition="'$(ConsumerProviderVersion)' == ''">10.0.0-preview.2</ConsumerProviderVersion>
+    <ConsumerEfCoreVersion Condition="'$(ConsumerEfCoreVersion)' == ''">10.0.13</ConsumerEfCoreVersion>
   </PropertyGroup>
 
   <ItemGroup>
