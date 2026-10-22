@@ -59,12 +59,13 @@ Qué NO se renombra a propósito:
 Flujo: **Prepare** (versión desde el tag) → **Test** (unit + funcionales de humo contra MySQL 8.4 y MariaDB 11.4)
 → **Pack** (4 `.nupkg` + `.snupkg`, verificados) → **Publish** (nuget.org + adjunta paquetes al Release).
 
-Configuración única:
+Configuración única (Trusted Publishing, sin API key guardada):
 
-1. En nuget.org: *API Keys → Create*, scope **Push new packages and package versions**, glob
-   `PulseSql.EntityFrameworkCore.MySql*`, expiración 365 días (anota la fecha para rotarla).
-2. En GitHub: *Settings → Environments → New environment* `nuget`; agrega el secreto `NUGET_API_KEY`.
-   Opcional: *Required reviewers* para aprobar manualmente cada push.
+1. En nuget.org: menú de usuario → **Trusted Publishing** → *Create*:
+   Repository Owner `ffamaximus`, Repository `PulseSql.MySql`, Workflow File `release.yml`, Environment `nuget`.
+2. En GitHub: *Settings → Secrets and variables → Actions → Variables* → `NUGET_USER` = usuario de nuget.org
+   (nombre de perfil, no el correo). El job **Publish** usa el environment `nuget` (opcional: *Required reviewers*).
+3. El secreto `NUGET_API_KEY` ya no se usa: bórralo de GitHub y revoca la API key en nuget.org.
 
 Publicar una versión:
 

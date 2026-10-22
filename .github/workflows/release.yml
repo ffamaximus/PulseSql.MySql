@@ -7,8 +7,11 @@ name: Release
 #   * Manual run (Actions > Release > Run workflow)
 #       -> same build, tests and pack, but never pushes (dry run). Packages are available as a workflow artifact.
 #
-# Requirements (Settings > Secrets and variables > Actions, or the "nuget" environment):
-#   NUGET_API_KEY  nuget.org API key with "Push" scope limited to the glob "PulseSql.EntityFrameworkCore.MySql*"
+# Authentication: nuget.org Trusted Publishing (OIDC, no stored API key).
+#   * nuget.org > (your user) > Trusted Publishing > policy:
+#       Repository Owner = <GitHub owner>, Repository = <repo name>, Workflow File = release.yml, Environment = nuget
+#   * GitHub repository variable NUGET_USER = your nuget.org username (profile name, not the e-mail).
+#   NuGet/login exchanges the GitHub OIDC token for a temporary API key valid for 1 hour.
 #
 # The tag must match Version.props: a pre-release tag (e.g. 10.0.0-preview.1) must equal
 # VersionPrefix-PreReleaseVersionLabel.PreReleaseVersionIteration; a stable tag (e.g. 10.0.0) must equal VersionPrefix.
@@ -222,7 +225,8 @@ jobs:
       name: nuget
       url: https://www.nuget.org/packages/PulseSql.EntityFrameworkCore.MySql/${{ needs.Prepare.outputs.version }}
     permissions:
-      contents: write
+      contents: write   # attach packages to the GitHub Release
+      id-token: write   # request the GitHub OIDC token for nuget.org Trusted Publishing
     steps:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
@@ -233,13 +237,23 @@ jobs:
         with:
           name: nupkgs-${{ needs.Prepare.outputs.version }}
           path: nupkgs
+      - name: Check Trusted Publishing configuration
+        shell: bash
+        env:
+          NUGET_USER: ${{ vars.NUGET_USER }}
+        run: |
+          [[ -n "$NUGET_USER" ]] || { echo "::error::Repository variable NUGET_USER (nuget.org username) is not configured"; exit 1; }
+      - name: NuGet login (OIDC -> temporary API key)
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ vars.NUGET_USER }}
       - name: Push to nuget.org
         shell: bash
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           set -euo pipefail
-          [[ -n "$NUGET_API_KEY" ]] || { echo "::error::Secret NUGET_API_KEY is not configured"; exit 1; }
           # Symbol packages (.snupkg) next to each .nupkg are pushed automatically.
           dotnet nuget push "nupkgs/*.nupkg" --api-key "$NUGET_API_KEY" \
             --source https://api.nuget.org/v3/index.json --skip-duplicate
