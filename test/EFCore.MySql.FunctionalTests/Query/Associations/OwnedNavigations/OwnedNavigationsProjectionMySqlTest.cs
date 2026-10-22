@@ -456,9 +456,9 @@ LEFT JOIN LATERAL (
 
     // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
 
-    public override async Task Select_subquery_FirstOrDefault_complex_collection(bool async)
+    public override async Task Select_subquery_FirstOrDefault_complex_collection(QueryTrackingBehavior queryTrackingBehavior)
     {
-        await base.Select_subquery_FirstOrDefault_complex_collection(async);
+        await base.Select_subquery_FirstOrDefault_complex_collection(queryTrackingBehavior);
 
         AssertSql();
     }

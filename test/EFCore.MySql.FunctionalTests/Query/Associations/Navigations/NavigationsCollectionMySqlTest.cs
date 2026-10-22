@@ -281,9 +281,9 @@ FROM `RootEntity` AS `r`
 
     // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
 
-    public override async Task Index_on_nested_collection(bool async)
+    public override async Task Index_on_nested_collection()
     {
-        await base.Index_on_nested_collection(async);
+        await base.Index_on_nested_collection();
 
         AssertSql();
     }

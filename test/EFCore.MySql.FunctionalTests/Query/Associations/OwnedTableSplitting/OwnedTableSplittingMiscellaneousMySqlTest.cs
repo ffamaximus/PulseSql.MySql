@@ -93,9 +93,9 @@ ORDER BY `r`.`Id`, `s`.`RootEntityId`, `s`.`Id`, `s`.`AssociateTypeRootEntityId`
 
     // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
 
-    public override async Task FromSql_on_root(bool async)
+    public override async Task FromSql_on_root()
     {
-        await base.FromSql_on_root(async);
+        await base.FromSql_on_root();
 
         AssertSql();
     }
