@@ -2329,6 +2329,131 @@ WHERE (
 """);
     }
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task Inline_collection_Contains_with_IEnumerable_EF_Parameter()
+    {
+        await base.Inline_collection_Contains_with_IEnumerable_EF_Parameter();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_nullable_ints_Contains_nullable_int_with_EF_Parameter()
+    {
+        await base.Parameter_collection_of_nullable_ints_Contains_nullable_int_with_EF_Parameter();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_empty_Contains()
+    {
+        await base.Parameter_collection_empty_Contains();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_empty_Join()
+    {
+        await base.Parameter_collection_empty_Join();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_Count_with_huge_number_of_values_over_5_operations()
+    {
+        await base.Parameter_collection_Count_with_huge_number_of_values_over_5_operations();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_Count_with_huge_number_of_values_over_5_operations_same_parameter()
+    {
+        await base.Parameter_collection_Count_with_huge_number_of_values_over_5_operations_same_parameter();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_Count_with_huge_number_of_values_over_2_operations_same_parameter_different_type_mapping()
+    {
+        await base.Parameter_collection_Count_with_huge_number_of_values_over_2_operations_same_parameter_different_type_mapping();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_Count_with_huge_number_of_values_over_5_operations_forced_constants()
+    {
+        await base.Parameter_collection_Count_with_huge_number_of_values_over_5_operations_forced_constants();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_Count_with_huge_number_of_values_over_5_operations_mixed_parameters_constants()
+    {
+        await base.Parameter_collection_Count_with_huge_number_of_values_over_5_operations_mixed_parameters_constants();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations()
+    {
+        await base.Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_same_parameter()
+    {
+        await base.Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_same_parameter();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_2_operations_same_parameter_different_type_mapping()
+    {
+        await base.Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_2_operations_same_parameter_different_type_mapping();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_forced_constants()
+    {
+        await base.Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_forced_constants();
+
+        AssertSql();
+    }
+
+    public override async Task Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_mixed_parameters_constants()
+    {
+        await base.Parameter_collection_of_ints_Contains_int_with_huge_number_of_values_over_5_operations_mixed_parameters_constants();
+
+        AssertSql();
+    }
+
+    public override async Task Contains_on_Enumerable()
+    {
+        await base.Contains_on_Enumerable();
+
+        AssertSql();
+    }
+
+    public override async Task Contains_on_MemoryExtensions()
+    {
+        await base.Contains_on_MemoryExtensions();
+
+        AssertSql();
+    }
+
+    public override async Task Contains_with_MemoryExtensions_with_null_comparer()
+    {
+        await base.Contains_with_MemoryExtensions_with_null_comparer();
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => MySqlTestHelpers.AssertAllMethodsOverridden(GetType());

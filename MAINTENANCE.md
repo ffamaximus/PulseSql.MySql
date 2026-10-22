@@ -51,7 +51,12 @@ Qué NO se renombra a propósito:
 1. `Directory.Packages.props` → `EFCoreVersion` y paquetes `Microsoft.Extensions.*`/`AspNetCore`.
 2. `global.json` → SDK.
 3. `Version.props` → `VersionPrefix` (seguimos la versión mayor/menor de EF Core).
-4. `dotnet build` → corregir APIs; `dotnet test` contra MySQL y MariaDB; actualizar baselines SQL.
+4. `dotnet build` → corregir APIs; `dotnet test` contra MySQL y MariaDB.
+   - Tests nuevos de EF Core (`Check_all_tests_overridden`): pegar los overrides que sugiere el mensaje con `AssertSql();` vacío.
+   - Bases nuevas (`All_test_bases_must_be_implemented`): implementar la clase MySql o ignorarla en `MySqlComplianceTest`
+     (bloque EF10-SPEC-DEFERRALS) + fila en `docs/efcore10-spec-deferrals.md` + contadores del script de auditoría.
+   - Baselines SQL: *Actions → Rewrite test baselines* (primero `mysql:8.4`, luego `mariadb:11.4` sobre la rama generada).
+     Crea la rama `baselines/<run>-<bd>` con los `AssertSql` reescritos; revisar el diff y abrir un PR.
 5. Para EF Core 11: crear rama `11.0-wip`; mantener `10.0-maint` para servicing.
 
 ## Publicación (`.github/workflows/release.yml`)

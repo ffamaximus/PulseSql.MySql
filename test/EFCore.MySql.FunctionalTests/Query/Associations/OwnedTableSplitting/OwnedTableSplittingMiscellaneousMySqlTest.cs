@@ -89,6 +89,19 @@ ORDER BY `r`.`Id`, `s`.`RootEntityId`, `s`.`Id`, `s`.`AssociateTypeRootEntityId`
 
     #endregion Simple filters
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task FromSql_on_root(bool async)
+    {
+        await base.FromSql_on_root(async);
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => TestHelpers.AssertAllMethodsOverridden(GetType());

@@ -18,7 +18,7 @@ test/EFCore.MySql.FunctionalTests/audit-efcore10-spec-coverage.sh
 
 The check uses the immutable main baseline `14c2cd558e37c71e7a2fca75e339ef902effdf60`,
 so it detects newly introduced method-level skips without sweeping the
-repository's historical skips. The table records all 39 EF Core 10 base
+repository's historical skips. The table records all 40 EF Core 10 base
 ignores and the 14 method-level skip additions relative to that baseline.
 Every entry has one of four classifications:
 
@@ -80,6 +80,7 @@ ignores.
 | base | GuidTranslationsTestBase<> | explicit follow-up | Provider type-mapping maintainers | EF10-SPLIT-TRANSLATIONS | Existing GUID coverage remains enabled; this newly split translation base needs a provider baseline. |
 | base | MathTranslationsTestBase<> | explicit follow-up | Provider translation maintainers | EF10-SPLIT-TRANSLATIONS | Existing math translation coverage remains enabled; this newly split base needs reconciliation. |
 | base | MiscellaneousTranslationsTestBase<> | explicit follow-up | Provider translation maintainers | EF10-SPLIT-TRANSLATIONS | Existing miscellaneous translation coverage remains enabled; this newly split base needs reconciliation. |
+| base | Microsoft.EntityFrameworkCore.Query.AdHocComplexTypeQueryRelationalTestBase | explicit follow-up | Provider query maintainers | EF10-ADHOC-COMPLEX-TYPE | Added in EF Core 10.0.x servicing; its parent AdHocComplexTypeQueryTestBase was already ignored before EF Core 10, so both need a provider slice together. |
 | method | test/EFCore.MySql.FunctionalTests/LazyLoadProxyMySqlTest.cs#Top_level_projection_track_entities_before_passing_to_client_method() | explicit follow-up | Provider test maintainers | EF10-LAZYLOAD-PROJECTION | Provider lazy-loading identity behavior differs for this projection; the rest of the concrete suite remains enabled. |
 | method | test/EFCore.MySql.FunctionalTests/MigrationsInfrastructureMySqlTest.cs#Can_apply_two_migrations_in_transaction_async() | database-native | Migration test maintainers | MYSQL-DDL-IMPLICIT-COMMIT | MySQL implicitly commits DDL, so this transaction-specific scenario is narrow and not a class-wide migration skip. |
 | method | test/EFCore.MySql.FunctionalTests/MigrationsMySqlTest.cs#Convert_string_column_to_a_json_column_containing_collection() | explicit follow-up | Provider migration maintainers | EF10-JSON-MIGRATION-CONVERSION | Converting populated string data to a JSON collection is not supported by the current mapping. |

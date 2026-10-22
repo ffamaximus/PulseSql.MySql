@@ -105,6 +105,10 @@ namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests
             typeof(GuidTranslationsTestBase<>),
             typeof(MathTranslationsTestBase<>),
             typeof(MiscellaneousTranslationsTestBase<>),
+
+            // EF10-ADHOC-COMPLEX-TYPE: relational ad-hoc complex type base added in EF Core 10.0.x servicing; its
+            // non-relational parent (AdHocComplexTypeQueryTestBase) is already ignored above.
+            typeof(Microsoft.EntityFrameworkCore.Query.AdHocComplexTypeQueryRelationalTestBase),
         };
 
         protected override Assembly TargetAssembly { get; } = typeof(MySqlComplianceTest).Assembly;

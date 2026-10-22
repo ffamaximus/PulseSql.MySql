@@ -452,6 +452,19 @@ LEFT JOIN LATERAL (
 
     #endregion Subquery
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task Select_subquery_FirstOrDefault_complex_collection(bool async)
+    {
+        await base.Select_subquery_FirstOrDefault_complex_collection(async);
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => TestHelpers.AssertAllMethodsOverridden(GetType());

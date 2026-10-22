@@ -68,7 +68,7 @@ base_types_text="$(awk '
 ' "$compliance_file")"
 
 base_type_count="$(printf '%s\n' "$base_types_text" | awk 'NF { count++ } END { print count + 0 }')"
-[[ "$base_type_count" == 39 ]] || fail "expected 39 EF Core 10 base ignores, found $base_type_count"
+[[ "$base_type_count" == 40 ]] || fail "expected 40 EF Core 10 base ignores, found $base_type_count"
 
 while IFS= read -r base_type; do
   [[ -n "$base_type" ]] || continue
@@ -280,7 +280,7 @@ done <<< "$expected_method_keys"
 
 ledger_base_count="$(grep -F -c '| base |' "$ledger_file" || true)"
 ledger_method_count="$(grep -F -c '| method |' "$ledger_file" || true)"
-[[ "$ledger_base_count" == 39 ]] || fail "ledger must contain 39 base rows, found $ledger_base_count"
+[[ "$ledger_base_count" == 40 ]] || fail "ledger must contain 40 base rows, found $ledger_base_count"
 [[ "$ledger_method_count" == 14 ]] || fail "ledger must contain 14 method rows, found $ledger_method_count"
 
-printf 'EF Core 10 specification audit passed: 39 base ignores and 14 method-level skips are classified.\n'
+printf 'EF Core 10 specification audit passed: 40 base ignores and 14 method-level skips are classified.\n'
