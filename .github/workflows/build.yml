@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Validate EF Core 10 CI contract
@@ -48,7 +48,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Set additional variables
@@ -110,14 +110,14 @@ jobs:
         run: ./test/EFCore.MySql.FunctionalTests/audit-efcore10-spec-coverage.sh
       - name: Cache - Database Image - Linux
         id: cache-databaseImage-linux
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         if: ${{ env.os == 'linux' }}
         with:
           path: cache/database
           key: database-linux-${{ env.databaseServerType }}-${{ env.databaseServerVersion }}-v2
       - name: Cache - Database Image - Windows
         id: cache-databaseImage-windows
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         if: ${{ env.os == 'windows' }}
         with:
           path: ${{ env.windowsUserTempLocation }}\Pomelo.Chocolatey.${{ env.databaseServerType }}.Server
@@ -224,7 +224,7 @@ jobs:
         shell: pwsh
         run: ${{ env.clientCommandPrefix }} -u root -pPassword12! -e 'SHOW VARIABLES;'
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
       - name: .NET Information
@@ -326,18 +326,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
       - name: Pack and verify local package consumer
         shell: bash
         run: ./test/EFCore.MySql.PackageConsumer/scripts/package-consumer.sh
       - name: Upload package validation artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: efcore10-package-consumer
           path: artifacts/packages
@@ -349,11 +349,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
       - name: .NET Information
@@ -431,7 +431,7 @@ jobs:
 
           echo "pushToNugetOrg=$pushToNugetOrg" >> $env:GITHUB_ENV
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nupkgs
           path: nupkgs

@@ -276,7 +276,7 @@ assert_full_history_checkout() {
   local checkout_step
 
   checkout_step="$(step_block "$job" Checkout)"
-  require_step_literal "$job_name" Checkout "$checkout_step" 'uses: actions/checkout@v4'
+  require_step_literal "$job_name" Checkout "$checkout_step" 'uses: actions/checkout@v7'
   require_step_literal "$job_name" Checkout "$checkout_step" 'fetch-depth: 0'
 }
 
@@ -494,7 +494,7 @@ require_step_literal PackageConsumer 'Pack and verify local package consumer' "$
 require_step_literal PackageConsumer 'Pack and verify local package consumer' "$package_step" 'shell: bash'
 assert_step_not_disabled PackageConsumer 'Pack and verify local package consumer' "$package_step"
 upload_step="$(step_block "$package_consumer_job" 'Upload package validation artifacts')"
-require_step_literal PackageConsumer 'Upload package validation artifacts' "$upload_step" 'uses: actions/upload-artifact@v4'
+require_step_literal PackageConsumer 'Upload package validation artifacts' "$upload_step" 'uses: actions/upload-artifact@v7'
 require_step_literal PackageConsumer 'Upload package validation artifacts' "$upload_step" 'path: artifacts/packages'
 assert_step_not_disabled PackageConsumer 'Upload package validation artifacts' "$upload_step"
 if printf '%s\n' "$package_consumer_job" | grep -E -n 'dotnet nuget push|git tag|gh release'; then
