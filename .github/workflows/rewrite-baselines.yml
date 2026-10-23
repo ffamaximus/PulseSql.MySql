@@ -103,8 +103,9 @@ jobs:
           DATABASE: ${{ inputs.database }}
         run: |
           set -euo pipefail
-          git add -A -- test ':!test/EFCore.MySql.FunctionalTests/config.json'
-          git reset -q -- 'test/**/bin' 'test/**/obj' 2>/dev/null || true
+          # Only tracked/untracked source files under test/; ignored files (config.json, bin/, obj/) are skipped.
+          # The rewriter writes CRLF; .gitattributes (text=auto) normalizes it to LF on add.
+          git -c core.safecrlf=false add -A -- test
           if git diff --cached --quiet; then
             echo "No baseline changes." >> "$GITHUB_STEP_SUMMARY"
             exit 0
