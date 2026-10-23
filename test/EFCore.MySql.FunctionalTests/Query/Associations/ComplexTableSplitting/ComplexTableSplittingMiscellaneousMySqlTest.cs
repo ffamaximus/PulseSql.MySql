@@ -103,7 +103,10 @@ WHERE `v`.`OptionalAssociate_Id` IS NOT NULL
     {
         await base.FromSql_on_root();
 
-        AssertSql();
+        AssertSql(
+            """
+SELECT * FROM `RootEntity`
+""");
     }
 
     #endregion EF Core 10.0.x servicing additions
