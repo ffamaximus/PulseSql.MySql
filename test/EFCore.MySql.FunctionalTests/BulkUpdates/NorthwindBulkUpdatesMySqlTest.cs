@@ -175,6 +175,40 @@ WHERE `o`.`OrderID` < 10300
 """);
     }
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task Update_with_select_mixed_entity_scalar_anonymous_projection(bool async)
+    {
+        await base.Update_with_select_mixed_entity_scalar_anonymous_projection(async);
+
+        AssertExecuteUpdateSql();
+    }
+
+    public override async Task Update_with_select_scalar_anonymous_projection(bool async)
+    {
+        await base.Update_with_select_scalar_anonymous_projection(async);
+
+        AssertExecuteUpdateSql();
+    }
+
+    public override async Task Update_Where_set_nullable_int_constant_via_discard_lambda(bool async)
+    {
+        await base.Update_Where_set_nullable_int_constant_via_discard_lambda(async);
+
+        AssertExecuteUpdateSql();
+    }
+
+    public override async Task Update_with_PK_pushdown_and_join_and_multiple_setters(bool async)
+    {
+        await base.Update_with_PK_pushdown_and_join_and_multiple_setters(async);
+
+        AssertExecuteUpdateSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => MySqlTestHelpers.AssertAllMethodsOverridden(GetType());
@@ -990,7 +1024,15 @@ LIMIT @p
     [SupportedServerVersionCondition("0.0.0-mysql", Skip = "Can fail non-deterministically when targeting MySQL, if certain tests precede it.")]
     public override async Task Update_Where_Skip_Take_set_constant(bool async)
     {
-        await base.Update_Where_Skip_Take_set_constant(async);
+        // Skip()/Take() without OrderBy() select undefined rows; on MySQL the verification SELECT and the UPDATE subquery
+        // can pick different ones (seen on 8.0/8.4). Order by the key so both statements select the same rows.
+        await AssertUpdate(
+            async,
+            ss => ss.Set<Customer>().Where(c => c.CustomerID.StartsWith("F")).OrderBy(c => c.CustomerID).Skip(2).Take(4),
+            e => e,
+            s => s.SetProperty(c => c.ContactName, "Updated"),
+            rowsAffectedCount: 4,
+            (b, a) => Assert.All(a, c => Assert.Equal("Updated", c.ContactName)));
 
         AssertExecuteUpdateSql(
             """
@@ -1003,6 +1045,7 @@ INNER JOIN (
     SELECT `c`.`CustomerID`
     FROM `Customers` AS `c`
     WHERE `c`.`CustomerID` LIKE 'F%'
+    ORDER BY `c`.`CustomerID`
     LIMIT @p0 OFFSET @p
 ) AS `c1` ON `c0`.`CustomerID` = `c1`.`CustomerID`
 SET `c0`.`ContactName` = @p1

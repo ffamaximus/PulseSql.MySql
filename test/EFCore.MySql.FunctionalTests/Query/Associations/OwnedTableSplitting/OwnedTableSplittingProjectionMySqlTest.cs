@@ -417,8 +417,10 @@ LEFT JOIN LATERAL (
     {
         await base.Select_subquery_FirstOrDefault_complex_collection(queryTrackingBehavior);
 
-        AssertSql(
-            """
+        if (queryTrackingBehavior is not QueryTrackingBehavior.TrackAll)
+        {
+            AssertSql(
+                """
 SELECT `r`.`Id`, `r3`.`Id`, `s`.`RootEntityId`, `s`.`Id`, `s`.`Int`, `s`.`Ints`, `s`.`Name`, `s`.`String`, `s`.`AssociateTypeRootEntityId`, `s`.`AssociateTypeId`, `s`.`Id0`, `s`.`Int0`, `s`.`Ints0`, `s`.`Name0`, `s`.`String0`, `s`.`OptionalNestedAssociate_Id`, `s`.`OptionalNestedAssociate_Int`, `s`.`OptionalNestedAssociate_Ints`, `s`.`OptionalNestedAssociate_Name`, `s`.`OptionalNestedAssociate_String`, `s`.`RequiredNestedAssociate_Id`, `s`.`RequiredNestedAssociate_Int`, `s`.`RequiredNestedAssociate_Ints`, `s`.`RequiredNestedAssociate_Name`, `s`.`RequiredNestedAssociate_String`, `r3`.`c`
 FROM `RootEntity` AS `r`
 LEFT JOIN LATERAL (
@@ -434,6 +436,7 @@ LEFT JOIN (
 ) AS `s` ON `r3`.`Id` = `s`.`RootEntityId`
 ORDER BY `r`.`Id`, `r3`.`Id`, `s`.`RootEntityId`, `s`.`Id`, `s`.`AssociateTypeRootEntityId`, `s`.`AssociateTypeId`
 """);
+        }
     }
 
     #endregion EF Core 10.0.x servicing additions

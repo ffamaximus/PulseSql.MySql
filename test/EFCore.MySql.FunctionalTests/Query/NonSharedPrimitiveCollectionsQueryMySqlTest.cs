@@ -690,6 +690,26 @@ WHERE `t`.`Id` IN (@ints1, @ints2, @ints3, @ints4, @ints5, @ints6, @ints7, @ints
 """);
     }
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task Parameter_collection_of_enum_Cast_from_different_enum_type(ParameterTranslationMode mode)
+    {
+        await base.Parameter_collection_of_enum_Cast_from_different_enum_type(mode);
+
+        AssertSql();
+    }
+
+    public override async Task Subquery_over_primitive_collection_on_inheritance_derived_type()
+    {
+        await base.Subquery_over_primitive_collection_on_inheritance_derived_type();
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => MySqlTestHelpers.AssertAllMethodsOverridden(GetType());

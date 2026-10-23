@@ -145,6 +145,33 @@ FROM `Missions` AS `m`
 """);
     }
 
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task DefaultIfEmpty_top_level_over_column_with_nullable_value_type(bool async)
+    {
+        await base.DefaultIfEmpty_top_level_over_column_with_nullable_value_type(async);
+
+        AssertSql();
+    }
+
+    public override async Task DefaultIfEmpty_top_level_over_arbitrary_expression_with_nullable_value_type(bool async)
+    {
+        await base.DefaultIfEmpty_top_level_over_arbitrary_expression_with_nullable_value_type(async);
+
+        AssertSql();
+    }
+
+    public override async Task DefaultIfEmpty_top_level_over_arbitrary_expression_with_non_nullable_value_type(bool async)
+    {
+        await base.DefaultIfEmpty_top_level_over_arbitrary_expression_with_non_nullable_value_type(async);
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => MySqlTestHelpers.AssertAllMethodsOverridden(GetType());

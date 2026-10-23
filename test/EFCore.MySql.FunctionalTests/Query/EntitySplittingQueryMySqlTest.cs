@@ -10,6 +10,19 @@ namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query;
 
 public class EntitySplittingQueryMySqlTest(NonSharedFixture fixture) : EntitySplittingQueryTestBase(fixture)
 {
+    #region EF Core 10.0.x servicing additions
+
+    // Baselines generated with EF_TEST_REWRITE_BASELINES=1 (see .github/workflows/rewrite-baselines.yml).
+
+    public override async Task Compare_split_entity_to_null(bool async)
+    {
+        await base.Compare_split_entity_to_null(async);
+
+        AssertSql();
+    }
+
+    #endregion EF Core 10.0.x servicing additions
+
     [ConditionalFact]
     public virtual void Check_all_tests_overridden()
         => MySqlTestHelpers.AssertAllMethodsOverridden(GetType());
