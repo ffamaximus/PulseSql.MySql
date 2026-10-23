@@ -351,7 +351,7 @@ env_block="$(printf '%s\n' "$workflow_content" | awk '
 require_step_literal workflow env "$env_block" 'skipAllTests: false'
 require_step_literal workflow env "$env_block" 'skipWindowsTests: false'
 
-require_job_literal CIContract "$ci_job" 'runs-on: ubuntu-latest'
+require_job_literal CIContract "$ci_job" 'runs-on: ubuntu-24.04'
 ci_validation_step="$(step_block "$ci_job" 'Validate EF Core 10 CI contract')"
 require_step_literal CIContract 'Validate EF Core 10 CI contract' "$ci_validation_step" 'run: ./test/EFCore.MySql.FunctionalTests/validate-efcore10-ci.sh'
 assert_step_not_disabled CIContract 'Validate EF Core 10 CI contract' "$ci_validation_step"
@@ -396,7 +396,7 @@ actual_database_versions="$(printf '%s\n' "$matrix_block" | awk '
 [[ "$actual_database_versions" == "$expected_database_versions" ]] \
   || fail 'BuildAndTest database matrix changed: expected the existing nine versions'
 
-expected_os='ubuntu-latest
+expected_os='ubuntu-24.04
 windows-latest'
 actual_os="$(printf '%s\n' "$matrix_block" | awk '
   /^        os:/ { in_block = 1; next }
@@ -408,7 +408,7 @@ actual_os="$(printf '%s\n' "$matrix_block" | awk '
   }
 ')"
 [[ "$actual_os" == "$expected_os" ]] \
-  || fail 'BuildAndTest OS matrix changed: expected ubuntu-latest and windows-latest'
+  || fail 'BuildAndTest OS matrix changed: expected ubuntu-24.04 and windows-latest'
 
 required_gate_steps=(
   'EF Core 10 specification audit'
@@ -488,7 +488,7 @@ require_run_body_exact_commands BuildAndTest 'Integration Tests - Legacy migrati
   "$legacy_script_path"
 
 require_job_literal PackageConsumer "$package_consumer_job" 'needs: BuildAndTest'
-require_job_literal PackageConsumer "$package_consumer_job" 'runs-on: ubuntu-latest'
+require_job_literal PackageConsumer "$package_consumer_job" 'runs-on: ubuntu-24.04'
 package_step="$(step_block "$package_consumer_job" 'Pack and verify local package consumer')"
 require_step_literal PackageConsumer 'Pack and verify local package consumer' "$package_step" 'run: ./test/EFCore.MySql.PackageConsumer/scripts/package-consumer.sh'
 require_step_literal PackageConsumer 'Pack and verify local package consumer' "$package_step" 'shell: bash'

@@ -50,7 +50,7 @@ env:
 
 jobs:
   Prepare:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       version: ${{ steps.version.outputs.version }}
       isPrerelease: ${{ steps.version.outputs.isPrerelease }}
@@ -89,7 +89,7 @@ jobs:
 
   Test:
     needs: Prepare
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 90
     strategy:
       fail-fast: true
@@ -162,7 +162,7 @@ jobs:
 
   Pack:
     needs: [Prepare, Test]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -219,7 +219,7 @@ jobs:
   Publish:
     needs: [Prepare, Pack]
     if: needs.Prepare.outputs.publish == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Optional: add required reviewers to the "nuget" environment for a manual approval before pushing.
     environment:
       name: nuget

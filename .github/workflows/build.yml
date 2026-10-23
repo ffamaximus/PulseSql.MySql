@@ -18,7 +18,7 @@ env:
   skipWindowsTests: false
 jobs:
   CIContract:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -43,7 +43,7 @@ jobs:
           - 10.6.20-mariadb
           - 10.5.27-mariadb
         os:
-          - ubuntu-latest
+          - ubuntu-24.04
           - windows-latest
     runs-on: ${{ matrix.os }}
     steps:
@@ -323,7 +323,7 @@ jobs:
           dotnet test -c Release --no-build --logger "GitHubActions;report-warnings=false" test/EFCore.MySql.IntegrationTests
   PackageConsumer:
     needs: BuildAndTest
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -346,7 +346,7 @@ jobs:
     needs: [BuildAndTest, PackageConsumer]
     # CI packages only (uploaded as a workflow artifact). Publishing to nuget.org is done by release.yml.
     if: github.event_name == 'push' && vars.PULSESQL_CI_PACK == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v7
