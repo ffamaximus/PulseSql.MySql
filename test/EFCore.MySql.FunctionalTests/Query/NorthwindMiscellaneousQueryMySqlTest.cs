@@ -38,7 +38,7 @@ namespace PulseSql.EntityFrameworkCore.MySql.FunctionalTests.Query
         AssertSql(
             """
 @p='10'
-@p0='5'
+@p1='5'
 
 SELECT `c0`.`CustomerID`, `c0`.`Address`, `c0`.`City`, `c0`.`CompanyName`, `c0`.`ContactName`, `c0`.`ContactTitle`, `c0`.`Country`, `c0`.`Fax`, `c0`.`Phone`, `c0`.`PostalCode`, `c0`.`Region`
 FROM (
@@ -48,7 +48,7 @@ FROM (
     LIMIT @p
 ) AS `c0`
 ORDER BY `c0`.`ContactName`
-LIMIT 18446744073709551610 OFFSET @p0
+LIMIT 18446744073709551610 OFFSET @p1
 """);
         }
 
@@ -157,7 +157,7 @@ ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
 
         AssertSql(
             """
-@p0='10'
+@p1='10'
 @p='5'
 
 SELECT `o1`.`OrderID`, `o0`.`ProductID`, `o0`.`OrderID`
@@ -166,7 +166,7 @@ FROM (
     FROM `Orders` AS `o`
     WHERE `o`.`OrderID` < 10300
     ORDER BY `o`.`OrderID`
-    LIMIT @p0 OFFSET @p
+    LIMIT @p1 OFFSET @p
 ) AS `o1`
 LEFT JOIN `Order Details` AS `o0` ON `o1`.`OrderID` = `o0`.`OrderID`
 ORDER BY `o1`.`OrderID`, `o0`.`ProductID`
