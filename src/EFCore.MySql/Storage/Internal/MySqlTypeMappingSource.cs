@@ -308,13 +308,17 @@ namespace PulseSql.EntityFrameworkCore.MySql.Storage.Internal
             // EF Core 10 maps structural types (complex types and owned entities) configured with ToJson() using this
             // placeholder CLR type. MySQL stores JSON in a native `json` column; MariaDB exposes `json` as a
             // LONGTEXT alias.
+            //
+            // `ServerVersion` is null at design time: since EF Core 10.0.x (dotnet/efcore#37284) the snapshot generator
+            // resolves the JSON container column type through `FindMapping(typeof(JsonTypePlaceholder))`, which happens
+            // without a configured server (e.g. in migrations model snapshots). Fall back to native JSON in that case.
             if (clrType == typeof(JsonTypePlaceholder))
             {
                 return new MySqlStructuralJsonTypeMapping(
                     storeTypeName ?? "json",
                     _options.NoBackslashEscapes,
                     _options.ReplaceLineBreaksWithCharFunction,
-                    _options.ServerVersion.Supports.JsonDataTypeEmulation);
+                    _options.ServerVersion?.Supports.JsonDataTypeEmulation ?? false);
             }
 
             if (storeTypeName != null)
