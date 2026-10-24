@@ -698,7 +698,17 @@ WHERE `t`.`Id` IN (@ints1, @ints2, @ints3, @ints4, @ints5, @ints6, @ints7, @ints
     {
         await base.Parameter_collection_of_enum_Cast_from_different_enum_type(mode);
 
-        AssertSql();
+        AssertSql(
+            """
+@filter1='2'
+
+SELECT `t`.`Id`
+FROM `TestEntity38008` AS `t`
+WHERE EXISTS (
+    SELECT 1
+    FROM (SELECT @filter1 AS `Value`) AS `f`
+    WHERE `f`.`Value` = `t`.`Status`)
+""");
     }
 
     public override async Task Subquery_over_primitive_collection_on_inheritance_derived_type()
