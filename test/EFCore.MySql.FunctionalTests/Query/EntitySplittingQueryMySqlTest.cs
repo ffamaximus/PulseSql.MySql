@@ -18,7 +18,12 @@ public class EntitySplittingQueryMySqlTest(NonSharedFixture fixture) : EntitySpl
     {
         await base.Compare_split_entity_to_null(async);
 
-        AssertSql();
+        AssertSql(
+            """
+SELECT `e`.`Id`, `e`.`EntityThreeId`, `e`.`IntValue1`, `e`.`IntValue2`, `s`.`IntValue3`, `e`.`IntValue4`, `e`.`StringValue1`, `e`.`StringValue2`, `e`.`StringValue3`, `e`.`StringValue4`
+FROM `EntityOne` AS `e`
+INNER JOIN `SplitEntityOnePart` AS `s` ON `e`.`Id` = `s`.`Id`
+""");
     }
 
     #endregion EF Core 10.0.x servicing additions

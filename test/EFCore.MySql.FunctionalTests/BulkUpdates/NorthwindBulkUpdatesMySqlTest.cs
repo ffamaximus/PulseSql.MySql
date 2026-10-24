@@ -197,14 +197,38 @@ WHERE `o`.`OrderID` < 10300
     {
         await base.Update_Where_set_nullable_int_constant_via_discard_lambda(async);
 
-        AssertExecuteUpdateSql();
+        AssertExecuteUpdateSql(
+            """
+UPDATE `Products` AS `p`
+SET `p`.`SupplierID` = 1
+WHERE `p`.`ProductID` < 5
+""");
     }
 
     public override async Task Update_with_PK_pushdown_and_join_and_multiple_setters(bool async)
     {
         await base.Update_with_PK_pushdown_and_join_and_multiple_setters(async);
 
-        AssertExecuteUpdateSql();
+        AssertExecuteUpdateSql(
+            """
+@p='1'
+@p2='10'
+
+UPDATE `Order Details` AS `o2`
+INNER JOIN (
+    SELECT `o1`.`OrderID`, `o1`.`ProductID`
+    FROM (
+        SELECT `o`.`OrderID`, `o`.`ProductID`
+        FROM `Order Details` AS `o`
+        ORDER BY `o`.`OrderID`
+        LIMIT 18446744073709551610 OFFSET @p
+    ) AS `o1`
+    INNER JOIN `Orders` AS `o0` ON `o1`.`OrderID` = `o0`.`OrderID`
+    WHERE `o0`.`CustomerID` = 'ALFKI'
+) AS `s` ON (`o2`.`OrderID` = `s`.`OrderID`) AND (`o2`.`ProductID` = `s`.`ProductID`)
+SET `o2`.`Quantity` = CAST(@p AS signed),
+    `o2`.`UnitPrice` = @p2
+""");
     }
 
     #endregion EF Core 10.0.x servicing additions
